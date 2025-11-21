@@ -64,10 +64,7 @@ export default function DashBoard() {
         Doctor Availability
     </div>
 
-    {/* FULL WIDTH RECENT ALERTS */}
-    <div className={styles.alertsSection}>
-        Recent Alerts
-    </div>
+   
 
 </div>
 </div>
