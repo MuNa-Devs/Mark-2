@@ -1,3 +1,5 @@
+// Need to complete it (add backend communication)
+
 // import Logo from '../reusable_elements/Logo'
 import styles from './signin_page.module.css';
 
@@ -6,6 +8,16 @@ import { Link } from 'react-router-dom';
 
 function SignInPage(){
     const [isLoginTriggered, setLoginStatus] = useState(false)
+
+    const [input, setInput] = useState({
+        email: "",
+        password: ""
+    })
+
+    const [input_err_status, setInputErrStatus] = useState({
+        email: false,
+        password: false
+    })
 
     const loginTriggered = () => {
         setLoginStatus(true)

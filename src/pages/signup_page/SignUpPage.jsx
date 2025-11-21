@@ -154,7 +154,7 @@ export default function SignUpPage(){
                     className={styles.signupBtn}
                     onClick={signUpTriggered}
                     disabled={is_signup_triggered}
-                >{is_signup_triggered ? "Signing in..." : "Sign Up"}</button>
+                >{is_signup_triggered ? "Processing..." : "Sign Up"}</button>
             </div>
 
             <div className={styles.signinOption}>
