@@ -87,10 +87,10 @@ export default function SignUpPage(){
                 <div className="logo">
                     {/* <Logo/> */}
 
-                    <h1 className={styles.title}>ProView</h1>
+                    <h1 className={styles.title}>Mark 2</h1>
                 </div>
 
-                <h3>Create Your ProView Account</h3>
+                <h3>Create Your Mark Account</h3>
             </div>
 
             <div className={styles.signupCard}>
