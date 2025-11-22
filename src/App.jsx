@@ -4,6 +4,7 @@ import DashBoard from "./pages/receptionist_pages/dash_board/DashBoard";
 import DoctorManagement from "./pages/receptionist_pages/doctor_management/DoctorManagement";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Appointment_Managment from "./pages/receptionist_pages/appointment_management/AppointmentManagement";
 
 export default function App(){
 
@@ -15,6 +16,8 @@ export default function App(){
                 <Route path="/dashboard" element={<DashBoard />} />
 
                 <Route path="/doctormanagement" element={<DoctorManagement />} />
+
+                <Route path="/appointmentmanagment" element={<Appointment_Managment />} />
 
                 <Route path="/signup" element={<SignUpPage />} />
 
