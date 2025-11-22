@@ -3,12 +3,12 @@
     padding: 0;
     height: 100dvh;
     width: 100dvw;
-    background-color: #121212;
+    background-color: #101922;
 }
 .sideBar{
     height: 100dvh;
     width: 200px;
-    background-color: #f9f1f1;
+    background-color:  #131c26;
     display:flex;
     flex-direction: column;
     position: fixed;
@@ -16,7 +16,7 @@
 .header{
     height: 60px;
     width: calc(100dvw - 200px);
-    background-color: #040f75;
+    background-color:#18232f;
     position: fixed;
     top: 0;
     left: 200px;
@@ -24,11 +24,12 @@
     justify-content: center;
     align-items: center;
     z-index:100;
+    border-bottom: 1px solid #3b4754
 }
 .inputContainer{
     width: 70%;
     height: 100%;
-    background-color: rgb(43, 231, 14);
+    background-color: #18232f;
     display: flex;
     align-items: center;
     padding-left: 10px;
@@ -42,12 +43,21 @@
     gap: 20px;
     padding-right: 20px;
 }
-.bell{
-    width: 24px;
-    height: 24px;
+.bell {
+    width: 36px;  /* bigger size */
+    height: 36px;
     background-color: white;
     border-radius: 50%;
+    background-position: center;
+    background-size: 70%; /* adjust size inside circle */
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
+
+
 .addNewAppointment{
     background-color: rgb(32, 143, 240);
     color: white;
@@ -56,16 +66,26 @@
     border-radius: 5px;
     transition:all 0.3s ease;
 }
-.input{
-    height:70%;
+.input {
+    height: 70%;
     width: 60%;
     border: none;
     border-radius: 5px;
+
+    /* 🔍 Add search icon */
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'><path d='M21 20l-5.6-5.6a7 7 0 10-1.4 1.4L20 21l1-1zM4 10a6 6 0 1112 0 6 6 0 01-12 0z'/></svg>") 
+            no-repeat 10px center;
+    background-size: 18px;
+
+    /* Add padding so text doesn't overlap the icon */
+    padding-left: 40px;
+    background-color: #1d1b36;
+    color: white;
 }
+
 .sideBarHeader{
     height:16%;
-    width:100%;
-    background-color: aqua;
+    width:100%;;
     display: flex;               /* <-- REQUIRED */
     align-items: center;         /* center vertically */
     justify-content: flex-start; /* place logo + name side-by-side */
@@ -73,20 +93,17 @@
 
 .sideBarBody{
     height:68%;
-    width:100%;
-    background-color: thistle;
+    width:100%;;
 }
 .sideBarFooter{
     bottom:0;
     height:16%;
     width:100%;
-    background-color: rgb(88, 68, 88);
 
 }
 .hospitalLogoContainer{
     height: 100%;
     width: 35%;
-    background-color: rgb(0, 0, 0);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -94,32 +111,43 @@
 .hospitalNameContainer{
     height: 100%;
     width: 65%;
-    background-color: rgb(255, 8, 8);
     display:flex;
     justify-content: center;
     align-items: center;
 }
-.hospitalLogo{
-    height:60%;
-    width:100%;
+.hospitalLogo {
+    height: 60%;
+    width: 100%;
     background-color: white;
     border-radius: 50%;
-    margin-left: 10px;
+    margin-left: 0px;
+    margin-right:5px;
+
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect x='35' y='10' width='30' height='80' fill='red'/><rect x='10' y='35' width='80' height='30' fill='red'/></svg>");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 60%;
 }
+
+
+
+
 .hospitalName{
     left:10px;
     color: white;
     font-size: 0.9rem;
-    font-weight: bold;
+    font-weight: lighter;
     top :0%;
+    font-family: 'Goudy oldstyle', serif;
 }
 .sideBarListItem{
     list-style-type: none;
     padding: 0;
     margin: 0;
-    font-size: 1.4rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: 20px;
+    font-size: 1.1rem;
+    font-family: 'Inter', sans-serif;
+    margin: 20px;
+    color: whitesmoke;
 }
 .sideBarListItem:hover{
     background-color: rgb(32, 143, 240);
@@ -127,15 +155,16 @@
     cursor: pointer;
     border-radius: 5px;
     height: fit-content;
-    width:100%;
+    width:auto;
 }
 .footerContent{
     list-style-type: none;
     padding: 0;
     margin: 0;
     font-size: 1.1rem;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-top: 20px;
+    font-family: 'Inter', sans-serif;
+    margin: 20px;
+    color: whitesmoke;
 }
 .footerContent:hover{
     background-color: rgb(32, 143, 240);
@@ -143,7 +172,7 @@
     cursor: pointer;
     border-radius: 5px;
     height: fit-content;
-    width:100%;
+    width: auto;
 }
 .recContent {
     padding: 20px;
@@ -160,34 +189,38 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px;
+    color: whitesmoke;
 }
 
 /* card layout */
 .card {
-    background-color: #1E1E1E;
+    background-color:#18232f;
     border-radius: 12px;
     padding: 20px;
-    border: 1px solid #2E2E2E;
+    border: 1px solid #3b4754;
+    color: whitesmoke;
 }
 
 /* --- TODAY'S APPOINTMENTS (left big area) --- */
 .appointmentsSection {
-    background-color: #1E1E1E;
+    background-color: #18232f;
     border-radius: 12px;
     padding: 20px;
     grid-column: 1 / 2;
     min-height: 400px;
-    border: 1px solid #2E2E2E;
+    border: 1px solid #3b4754;
+    color: whitesmoke;
 }
 
 /* --- RIGHT SIDE DOCTOR AVAILABILITY BOX --- */
 .doctorAvailability {
-    background-color: #1E1E1E;
+    background-color: #18232f;
     border-radius: 12px;
     padding: 20px;
     grid-column: 2 / 3;
     min-height: 250px;
-    border: 1px solid #2E2E2E;
+    border: 1px solid #3b4754;
+    color: whitesmoke;
 }
 
 .addNewAppointment:hover {
@@ -201,4 +234,9 @@
 .input:focus{
     outline: none;
     box-shadow: 0 0 5px rgb(32, 143, 240);
+}
+.smallText{
+    font-size: 0.9rem;
+    color:rgb(116, 126, 130);
+    font-family: 'Inter', sans-serif;
 }
