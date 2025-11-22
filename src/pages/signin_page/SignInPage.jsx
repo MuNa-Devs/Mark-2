@@ -5,8 +5,10 @@ import styles from './signin_page.module.css';
 
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 function SignInPage(){
+    const navigate = useNavigate();
     const [isLoginTriggered, setLoginStatus] = useState(false)
 
     const [input, setInput] = useState({
@@ -23,6 +25,7 @@ function SignInPage(){
         setLoginStatus(true)
         setTimeout(() => {
             setLoginStatus(false)
+            navigate("/doctormanagement")
         }, 3000)
     }
     

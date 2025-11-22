@@ -3,7 +3,7 @@
     padding: 0;
     height: 100dvh;
     width: 100dvw;
-    background-color: #121212;
+    background-color: #121417;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #ffffff;
+    color: #e8ecf2;
 }
 
 .signupBody h1 {
@@ -27,24 +27,24 @@
     font-weight: bold;
     margin: 0;
     width: auto;
-    color: #ffffff;
+    color: #e8ecf2;
 }
 
 .signupBody h2 {
     font-size: 1.5em;
     margin: 0;
     width: auto;
-    color: #e0e0e0;
+    color: #9aa5b5;
 }
 
 .signupBody p {
     font-size: 0.8em;
     margin: 0;
-    color: #b0b0b0;
+    color: #9aa5b5;
 }
 
 .signupCard {
-    background-color: #1e1e1e;
+    background-color: #1e2228;
     padding: 28px;
     margin: 20px;
     height: auto;
@@ -57,7 +57,9 @@
     justify-content: space-evenly;
 }
 
-.signupCard div, .signupCard h5, .signupCard input {
+.signupCard div,
+.signupCard h5,
+.signupCard input {
     margin: 1px;
 }
 
@@ -68,7 +70,7 @@
 }
 
 .signupCard h5 {
-    color: #cccccc;
+    color: #e8ecf2;
 }
 
 .signupCard .text {
@@ -81,14 +83,14 @@
     max-height: 40px;
     min-width: 250px;
     max-width: 500px;
-    border: 0.5px solid #555555;
-    background-color: #2a2a2a;
-    color: #e0e0e0;
+    border: 0.5px solid #2a2f36;
+    background-color: #2a2f36;
+    color: #e8ecf2;
 }
 
 .signupCard .text:focus {
-    outline: 0.5px solid #4a90ff;
-    background-color: #333333;
+    outline: 0.5px solid #4da3ff;
+    background-color: #2a2f36;
 }
 
 .utils {
@@ -106,20 +108,21 @@
     width: 100%;
     display: inline-flex;
     gap: 5px;
-    color: #b0b0b0;
+    color: #9aa5b5;
 }
 
 .rememberMeDude input {
-    border: 0.5px solid #555555;
-    background-color: #2a2a2a;
+    border: 0.5px solid #2a2f36;
+    background-color: #2a2f36;
 }
 
 a {
     text-decoration: none;
+    color: #4da3ff;
 }
 
 .utils a p {
-    color: #4a90ff;
+    color: #4da3ff;
 }
 
 .signupBtn {
@@ -128,7 +131,7 @@ a {
     max-height: 40px;
     min-width: 250px;
     max-width: 500px;
-    background-color: #4a90ff;
+    background-color: #4da3ff;
     color: white;
     border-radius: 5px;
     border: none;
@@ -136,11 +139,12 @@ a {
 }
 
 .signupBtn:active {
-    background-color: #3571c6;
+    background-color: #4da3ff;
+    opacity: 0.8;
 }
 
 .signupBtn:disabled {
-    background-color: rgba(53, 113, 198, 0.6);
+    background-color: rgba(77, 163, 255, 0.6);
     cursor: not-allowed;
 }
 
@@ -158,7 +162,8 @@ a {
         gap: 16px;
     }
 
-    .signupCard h3, .signupBtn {
+    .signupCard h3,
+    .signupBtn {
         grid-column: span 2;
         text-align: center;
     }
@@ -184,13 +189,13 @@ a {
 }
 
 @media (max-width: 480px) {
-    /* */
+    /*  */
 }
 
 @media (max-width: 1024px) {
-    /* */
+    /*  */
 }
 
 @media (max-width: 1280px) {
-    /* */
+    /*  */
 }
