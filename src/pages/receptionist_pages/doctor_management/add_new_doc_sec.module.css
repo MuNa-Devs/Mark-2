@@ -1,0 +1,202 @@
+.addNewDocSecBody{
+    position: absolute;
+    height: 100dvh;
+    width: 100dvw;
+    background-color: rgba(0, 0, 0, 0.509);
+}
+
+.addNewDocSec{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+    width: 65dvw;
+    max-width: 800px;
+    height: 65dvh;
+    max-height: 550px;
+
+    background-color: #101922;
+    border-radius: 12px;
+    padding: 16px;
+
+    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 32px;
+}
+
+.titlebar{
+    height: auto;
+    width: 100%;
+    padding-top: 8px;
+    padding-bottom: 24px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #3b4754;
+}
+
+.titlebar h3{
+    font-size: 0.95em;
+    letter-spacing: 0.5px;
+}
+
+.titlebar button{
+    background-color: transparent;
+    color: grey;
+    border: none;
+    font-size: 0.9em;
+    cursor: pointer;
+} .titlebar button:hover{
+    color: rgb(255, 25, 0);
+}
+
+.sections{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+}
+
+.sections .sectionHeaders{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 40px;
+    border-bottom: 1px solid #3b4754;
+}
+
+.sections .sectionHeaders .section{
+    width: auto;
+    height: 30px;
+    background-color: transparent;
+    border: none;
+    color: #e2e8f0;
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+} .sections .sectionHeaders .activeSection{
+    border-bottom: 3px solid #137fec;
+    position: relative;
+    top: 1.5px;
+}
+
+.sections .profilePic{
+    height: auto;
+    width: 100%;
+    padding: 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 16px;
+}
+
+.sections .profilePic .image{
+    height: 80px;
+    width: 80px;
+    border-radius: 50%;
+    background-color: #2a2f36;
+}
+
+.sections .profilePic .uploadBtn{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+}
+
+.sections .profilePic .uploadBtn button{
+    width: auto;
+    height: auto;
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    background-color: #137fec;
+    color: #e2e8f0;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.sections .profilePic .uploadBtn p{
+    font-size: 0.7em;
+    color: #9dabb9;
+}
+
+.sections .details {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    column-gap: 40px;
+    width: 100%;
+    border-bottom: 1px solid #3b4754;
+    padding-bottom: 20px;
+}
+
+.sections .details div h5{
+    margin: 0;
+    padding: 0;
+    font-size: 0.73em;
+    letter-spacing: 0.5px;
+    color: #adb2b6;
+    margin-bottom: 4px;
+}
+
+.sections .details div input{
+    width: calc(100% - 24px);
+    padding: 8px;
+    padding-left: 12px;
+    background-color: #3b4754b7;
+    border: none;
+    border-radius: 9px;
+    caret-color: #e2e8f0;
+    color: #e2e8f0;
+    font-size: 0.75em;
+    letter-spacing: 0.5px;
+    outline: none;
+}
+
+.sections .bottomButtons{
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+}
+
+.sections .bottomButtons button{
+    padding: 8px;
+    padding-left: 16px;
+    padding-right: 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+}
+
+.sections .bottomButtons .cancel{
+    color: #adb2b6;
+    background-color: transparent;
+} .sections .bottomButtons .cancel:hover{
+    background-color: rgb(255, 54, 32);
+    color: #e2e8f0;
+}
+
+.sections .bottomButtons .save{
+    color: #e2e8f0;
+    background-color: #137fec;
+}

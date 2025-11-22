@@ -1,7 +1,11 @@
-import styles from './dark_doctor_management.module.css';
+import styles from './doctor_management.module.css';
 import SideBar from '../../../reusable_components/receptionist_sidebar/ReceptionistSideBar'
+import AddNewDocSec from './AddNewDocSec';
+
+import { useState } from 'react';
 
 export default function DoctorManagement(){
+    const [add_doc_open_status, setAddDocOpenStatus] = useState(false);
 
     return (
         <div className={styles.doctorManagementBody}>
@@ -61,8 +65,13 @@ export default function DoctorManagement(){
                             <input type="text" placeholder="Search Doctors.."/>
                         </div>
 
-                        <button className={styles.addDocBtn}><i className="fa-solid fa-plus"></i> Add New Doctor</button>
-                        <button className={styles.fallbackAddDocBtn}><i className="fa-solid fa-plus"></i> <i className="fa-solid fa-user-doctor"></i></button>
+                        <button className={styles.addDocBtn}
+                            onClick={() => {setAddDocOpenStatus(() => true)}}
+                        ><i className="fa-solid fa-plus"></i> Add New Doctor</button>
+                        
+                        <button className={styles.fallbackAddDocBtn}
+                            onClick={() => {setAddDocOpenStatus(() => true)}}
+                        ><i className="fa-solid fa-plus"></i> <i className="fa-solid fa-user-doctor"></i></button>
                     </div>
 
                     <div className={styles.existingDocs}>
@@ -89,63 +98,7 @@ export default function DoctorManagement(){
                 </div>
             </div>
 
-            {/* <div className={styles.addNewDocSec}>
-                <div className={styles.titlebar}>
-                    <h3>Add New Doctor</h3>
-
-                    <button><i className="fa-solid fa-xmark"></i></button>
-                </div>
-
-                <div className={styles.sections}>
-                    <button>Personal Information</button>
-
-                    <button>Professional Details</button>
-
-                    <button>Availability</button>
-                </div>
-
-                <div className={styles.profilePic}>
-                    <div className={styles.image}></div>
-
-                    <div className={styles.uploadBtn}>
-                        <button>Upload Photo</button>
-
-                        <p>PNG or JPEG, max 2MB.</p>
-                    </div>
-                </div>
-
-                <div className={styles.details}>
-                    <div className={styles.firstName}>
-                        <h4>First Name</h4>
-
-                        <input type="text" placeholder="First Name"/>
-                    </div>
-
-                    <div className={styles.lastName}>
-                        <h4>Last Name</h4>
-
-                        <input type="text" placeholder="Last Name"/>
-                    </div>
-
-                    <div className={styles.email}>
-                        <h4>Email Address</h4>
-
-                        <input type="email" placeholder="Email"/>
-                    </div>
-
-                    <div className={styles.phoneNumber}>
-                        <h4>Phone Number</h4>
-
-                        <input type="number" placeholder="Phone Number"/>
-                    </div>
-                </div>
-
-                <div className={styles.bottomButtons}>
-                    <button>Cancel</button>
-
-                    <button>Save and Continue</button>
-                </div>
-            </div> */}
+            {add_doc_open_status && <AddNewDocSec closeHook={() => setAddDocOpenStatus(false)} />}
         </div>
     );
 }

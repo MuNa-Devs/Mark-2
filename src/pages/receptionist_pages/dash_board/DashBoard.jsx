@@ -1,4 +1,4 @@
-import Sidebar from '../../../reusable_components/ReceptionistSideBar';
+import Sidebar from '../../../reusable_components/receptionist_sidebar/ReceptionistSideBar';
 import styles from './dash_board.module.css';
 
 export default function DashBoard(){
@@ -7,7 +7,7 @@ export default function DashBoard(){
         <div className={styles.recDashBoard}>
 
             {/* Reusable sidebar component */}
-            <Sidebar />
+            <Sidebar page="dashboard" />
 
             {/* Header */}
             <div className={styles.header}>
