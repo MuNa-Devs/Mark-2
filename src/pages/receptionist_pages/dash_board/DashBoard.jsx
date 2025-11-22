@@ -1,4 +1,4 @@
-import Sidebar from '../../../reusable_components/ReceptionistSideBar';
+import Sidebar from '../../../reusable_components/receptionist_sidebar/ReceptionistSideBar';
 import styles from './dash_board.module.css';
 
 export default function DashBoard(){
