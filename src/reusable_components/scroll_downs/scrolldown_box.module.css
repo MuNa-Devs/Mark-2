@@ -1,0 +1,38 @@
+.dropdownBox {
+  width: 10%;
+  height: 20%;
+  margin: 10px;
+  font-family: Arial;
+}
+
+.dropdownHeader {
+  padding: 12px;
+  background-color: #18232f;
+  color: white;
+  border: 1px solid #3b4754;
+  border-radius: 6px;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.arrow {
+  font-size: 14px;
+}
+
+.dropdownMenu {
+  margin-top: 5px;
+  border: 1px solid #3b4754;
+  background-color: #1f2d3d;
+  border-radius: 6px;
+}
+
+.dropdownItem {
+  padding: 10px;
+  color: white;
+  cursor: pointer;
+}
+
+.dropdownItem:hover {
+  background-color: #2d3a48;
+}
