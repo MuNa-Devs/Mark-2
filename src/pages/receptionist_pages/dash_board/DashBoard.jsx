@@ -7,7 +7,7 @@ export default function DashBoard(){
         <div className={styles.recDashBoard}>
 
             {/* Reusable sidebar component */}
-            <Sidebar page="dashboard" />
+            <Sidebar page="dashboard" location="/dashboard" />
 
             {/* Header */}
             <div className={styles.header}>

@@ -99,11 +99,11 @@ h4, h3, p {
     cursor: pointer;
 }
 
-.mainDiv .header .options .notificationIcon:hover{
+.mainDiv .header .options .notificationIcon i:hover{
     color: #4da3ff;
 }
 
-.mainDiv .header .options .aboutIcon:hover{
+.mainDiv .header .options .aboutIcon i:hover{
     color: #4da3ff;
 }
 
@@ -231,6 +231,11 @@ h4, h3, p {
     color: #4da3ff;
     font-size: 0.85em;
     cursor: pointer;
+}
+
+.mainDiv .managementBody .docDiv .actionBtns button i{
+    color: #4da3ff;
+    font-size: 0.9em;
 }
 
 /* Media Queries */

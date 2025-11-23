@@ -59,7 +59,8 @@
     gap: 10px;
 }
 
-.sidebar .utilities .utilOptions, .sidebar .sidebarOptions .utilOptions{
+.sidebar .utilities .utilOptions,
+.sidebar .sidebarOptions .utilOptions{
     color: #e8ecf2;
     display: none;
 }
@@ -77,6 +78,11 @@
     padding: 10px;
     padding-left: 20px;
     cursor: pointer;
+}
+
+.sidebar .utilities .backBtn i,
+.sidebar .utilities .backBtn span{
+    color: rgb(255, 29, 29);
 }
 
 .sidebar .utilities .activePage{
@@ -98,6 +104,10 @@
     align-items: center;
     justify-content: space-evenly;
     gap: 10px;
+}
+
+.sidebar .sidebarOptions .backBtn{
+    display: none;
 }
 
 .sidebar .sidebarOptions .settings,
@@ -223,6 +233,10 @@
         display: none;
     }
 
+    .sidebar .utilities .backBtn{
+        display: none;
+    }
+
     .sidebar .sidebarOptions{
         width: 50%;
         display: flex;
@@ -250,6 +264,10 @@
     } .sidebar .sidebarOptions .utilOptions{
         color: #e8ecf2;
         display: block;
+    } .sidebar .sidebarOptions .backBtn{
+        display: block;
+    } .sidebar .sidebarOptions .backBtn i{
+        color: rgb(255, 29, 29);
     }
 
     .sidebar .hospitalBranding .hospitalName span{

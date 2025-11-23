@@ -1,0 +1,14 @@
+.hospitalSettingsPage{
+    display: flex;
+    flex-direction: row;
+    height: 100dvh;
+    width: 100dvw;
+    margin: 0;
+    padding: 0;
+}
+
+.sectionBody{
+    flex: 1;
+    padding: 0;
+    margin: 0;
+}

@@ -42,6 +42,12 @@ export default function ReceptionistSidebar(props){
                     <button className={props.page === "billing" ? styles.activePage: ""}
                         onClick={() => navigate("/billing")}
                     ><i className="fa-solid fa-receipt"></i> <span>Billing</span></button>
+
+                    <button className={props.page === "hospitalsettings" ? styles.activePage: ""}
+                        onClick={() => navigate("/hospitalsettings", {state: {from: props.location}})}
+                    ><i className="fa-solid fa-screwdriver-wrench"></i> <span>Hospital Settings</span></button>
+
+                    {props.page === '404' && <button className={styles.activePage}>Burra Poinda Bro</button>}
                 </div>
             </div>
 
