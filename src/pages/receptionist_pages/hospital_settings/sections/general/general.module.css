@@ -1,0 +1,72 @@
+.generalScreen{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    gap: 24px;
+}
+
+.generalScreen h1{
+    font-size: 1.2em;
+    color: #e2e8f0;
+    letter-spacing: 0.7px;
+}
+
+.hospitalInfo, .contactInfo{
+    width: calc(100% - 40px);
+    height: auto;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 16px;
+    padding: 16px;
+    background-color: #1c1f25;
+    border: 1px solid #3b4754;
+    border-radius: 16px;
+}
+
+.hospitalInfo h3, .contactInfo h3{
+    font-size: 0.95em;
+    color: #e2e8f0;
+    letter-spacing: 0.6px;
+    margin: 12px;
+}
+
+.hospitalInfo div,
+.contactInfo div{
+    width: calc(100% - 40px);
+    height: auto;
+    display: flex;
+    padding-left: 20px;
+    padding-right: 20px;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 10px;
+}
+
+.hospitalInfo h5, .contactInfo h5{
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    color: #9dabb9;
+    margin: 0;
+}
+
+.hospitalInfo input, .contactInfo input, .hospitalInfo textarea{
+    width: calc(100% - 24px);
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    padding: 12px;
+    background-color: #283039;
+    caret-color: #e2e8f0;
+    color: #e2e8f0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.hospitalInfo label{
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    color: #9dabb9;
+    margin: 0;
+}
