@@ -8,7 +8,7 @@ export default function HospitalSettings(){
     const location = useLocation();
     const native = location.state?.from || "/";
 
-    const [section_body, setSectionBody] = useState("general");
+    const [section_body, setSectionBody] = useState("optimings");
 
     return (
         <div className={styles.hospitalSettingsPage}>
