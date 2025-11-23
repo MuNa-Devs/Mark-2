@@ -1,19 +1,20 @@
 .dropdownBox {
-  width: 10%;
-  height: 20%;
+  width: 100px;
   margin: 10px;
-  font-family: Arial;
+  position: relative;     /* required for absolute menu */;
 }
+
 
 .dropdownHeader {
   padding: 12px;
   background-color: #18232f;
-  color: white;
+  color: rgb(201, 205, 209);
   border: 1px solid #3b4754;
-  border-radius: 6px;
+  border-radius: 50px;
   display: flex;
   justify-content: space-between;
   cursor: pointer;
+  height:15px;
 }
 
 .arrow {
@@ -21,11 +22,19 @@
 }
 
 .dropdownMenu {
+  position: absolute;      /* <-- the key fix */
+  top: 100%;               /* position just below header */
+  left: 0;
+
+  width: 100%;             /* match dropdown width */
+
   margin-top: 5px;
   border: 1px solid #3b4754;
   background-color: #1f2d3d;
   border-radius: 6px;
+  z-index: 9999;            /* keeps it on top */
 }
+
 
 .dropdownItem {
   padding: 10px;
