@@ -4,12 +4,12 @@ import AddNewDocSec from './AddNewDocSec';
 
 import { useState } from 'react';
 
-export default function DoctorManagement(){
+export default function DoctorManagement(props) {
     const [add_doc_open_status, setAddDocOpenStatus] = useState(false);
 
     return (
         <div className={styles.doctorManagementBody}>
-            <div className={styles.sidebarAtTop}>
+            {/* <div className={styles.sidebarAtTop}>
                 <div className={styles.ensureTogether}>
                     <div className={styles.hospitalBranding}>
                         <div className={styles.logo}>
@@ -23,11 +23,12 @@ export default function DoctorManagement(){
                     </div>
 
                     <div className={styles.utilities}>
-                        <button><i className="fa-solid fa-table-columns"></i> <span>Dashboard</span></button>
-                        <button><i className="fa-solid fa-calendar-days"></i> <span>Appointments</span></button>
-                        <button><i className="fa-solid fa-users"></i> <span>Patients</span></button>
-                        <button className={styles.activePage}><i className="fa-solid fa-user-doctor"></i> <span>Manage Doctors</span></button>
-                        <button><i className="fa-solid fa-receipt"></i>  <span>Billing</span></button>
+                        <button className={styles.utilOptions}><i className="fa-solid fa-list"></i></button>
+                        <button className={props.page === "dashboard" ? styles.activePage : ""}><i className="fa-solid fa-table-columns"></i> <span>Dashboard</span></button>
+                        <button className={props.page === "appointments" ? styles.activePage : ""}><i className="fa-solid fa-calendar-days"></i> <span>Appointments</span></button>
+                        <button className={props.page === "patients" ? styles.activePage : ""}><i className="fa-solid fa-users"></i> <span>Patients</span></button>
+                        <button className={props.page === "doctors" ? styles.activePage : ""}><i className="fa-solid fa-user-doctor"></i> <span>Manage Doctors</span></button>
+                        <button className={props.page === "billing" ? styles.activePage : ""}><i className="fa-solid fa-receipt"></i>  <span>Billing</span></button>
                     </div>
                 </div>
 
@@ -36,7 +37,7 @@ export default function DoctorManagement(){
                     <button className={styles.settings}><i className="fa-solid fa-gear"></i> <span>Settings</span></button>
                     <button className={styles.logout}><i className="fa-solid fa-arrow-right-from-bracket"></i> <span>Log Out</span></button>
                 </div>
-            </div>
+            </div> */}
 
             <SideBar page="doctors" />
 
@@ -47,7 +48,7 @@ export default function DoctorManagement(){
 
                         <div className={styles.searchBarDiv}>
                             <i className="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Search Doctors.."/>
+                            <input type="text" placeholder="Search Doctors.." />
                         </div>
                     </div>
 
@@ -62,15 +63,15 @@ export default function DoctorManagement(){
                     <div className={styles.topMost}>
                         <div className={`${styles.searchBarDiv} ${styles.noSearchBarDiv}`}>
                             <i className="fa-solid fa-magnifying-glass"></i>
-                            <input type="text" placeholder="Search Doctors.."/>
+                            <input type="text" placeholder="Search Doctors.." />
                         </div>
 
                         <button className={styles.addDocBtn}
-                            onClick={() => {setAddDocOpenStatus(() => true)}}
+                            onClick={() => { setAddDocOpenStatus(() => true) }}
                         ><i className="fa-solid fa-plus"></i> Add New Doctor</button>
-                        
+
                         <button className={styles.fallbackAddDocBtn}
-                            onClick={() => {setAddDocOpenStatus(() => true)}}
+                            onClick={() => { setAddDocOpenStatus(() => true) }}
                         ><i className="fa-solid fa-plus"></i> <i className="fa-solid fa-user-doctor"></i></button>
                     </div>
 
@@ -85,7 +86,7 @@ export default function DoctorManagement(){
                             <div className={styles.docPfp}></div>
 
                             <p>Lorem ipsum dolor sit amet.</p>
-                            
+
                             <div className={styles.actionBtns}>
                                 <button><i className="fa-solid fa-pencil"></i></button>
 

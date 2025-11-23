@@ -59,12 +59,12 @@
     gap: 10px;
 }
 
-.sidebar .utilities .utilOptions{
+.sidebar .utilities .utilOptions, .sidebar .sidebarOptions .utilOptions{
     color: #e8ecf2;
     display: none;
 }
 
-.sidebar .utilities button, .sidebarAtTop .utilities button{
+.sidebar .utilities button{
     height: auto;
     width: calc(100% - 40px);
     background-color: transparent;
@@ -117,6 +117,8 @@
 .logout{
     color: #ff5f5f;
 }
+
+/* Media queries */
 
 @media (max-width: 870px){
     .sidebar span{
@@ -188,14 +190,16 @@
 
 @media (max-width: 600px){
 
-    .sidebarAtTop{
+    .sidebar{
         width: 100dvw;
         height: auto;
         display: flex;
+        flex-direction: row;
         justify-content: space-between;
         padding: 0;
         margin: 0;
         background-color: #1c1f25;
+        border: none;
         border-bottom: 1px solid #2a2f36;
     }
 
@@ -204,174 +208,46 @@
         width: 50%;
         display: flex;
         flex-direction: row;
-        justify-content: space-between;
+        justify-content: flex-start;
+        padding: 0;
+        margin: 0;
         gap: 10px;
     }
 
-    .sidebarAtTop .utilities button{
+    .sidebar .utilities{
         display: none;
     }
 
-    .sidebarAtTop .utilities{
-        height: 100%;
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .sidebarAtTop .sidebarOptions{
+    .sidebar .sidebarOptions{
         width: 50%;
         display: flex;
         flex-direction: row;
         align-items: center;
         justify-content: flex-end;
+        padding-right: 10px;
         gap: 10px;
     }
 
-    .sidebarAtTop .sidebarOptions span{
-        display: none;
-    }
-
-    .sidebarAtTop .sidebarOptions button{
-        background-color: transparent;
-        border: none;
-    } .sidebarAtTop .sidebarOptions .utilOptions{
-        color: #e8ecf2;
-    }
-
-    .doctorManagementBody{
-        padding: 0;
-        margin: 0;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        height: 100dvh;
-        width: 100dvw;
-        background-color: #121417;
-        color: #e8ecf2;
-    }
-
-    .sidebar{
-        display: none;
-    }
-}
-
-@media (max-width: 550px){
-    .searchBarDiv{
+    .sidebar .sidebarOptions .settings,
+    .sidebar .sidebarOptions .logout{
         width: auto;
         height: auto;
-        background-color: #2a2f36;
-        border-radius: 8px;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-left: 10px;
-        gap: 5px;
+        padding: 10px;
     }
 
-    .searchBarDiv input{
-        min-width: 230px;
-        max-width: 350px;
-        height: 20px;
-        border-radius: 8px;
-        font-size: 0.75em;
-        border: none;
-        outline: none;
-        padding: 5px;
-        background-color: transparent;
-        caret-color: #e8ecf2;
-        color: #e8ecf2;
-        letter-spacing: 1px;
-    }
-}
-
-@media (max-width: 500px){
-    .topMost .addDocBtn{
+    .sidebar .sidebarOptions span{
         display: none;
     }
 
-    .mainDiv .managementBody .topMost .fallbackAddDocBtn{
+    .sidebar .sidebarOptions button{
+        background-color: transparent;
+        border: none;
+    } .sidebar .sidebarOptions .utilOptions{
+        color: #e8ecf2;
         display: block;
     }
-}
 
-@media (max-width: 430px){
-    .searchBarDiv input{
-        min-width: 150px;
-        max-width: 350px;
-        height: 20px;
-        border-radius: 8px;
-        font-size: 0.75em;
-        border: none;
-        outline: none;
-        padding: 5px;
-        background-color: transparent;
-        caret-color: #e8ecf2;
-        color: #e8ecf2;
-        letter-spacing: 1px;
-    }
-
-    .mainDiv .managementBody .existingDocs .headers{
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        padding-top: 5px;
-        padding-bottom: 10px;
-        width: calc(100% - 20px);
-        position: relative;
-        left: 10px;
-        height: auto;
-        border-bottom: 1px solid #3b4754;
-        color: #9aa5b5;
-    }
-
-    .mainDiv .managementBody .existingDocs .headers .docName{
-        text-align: center;
-        font-size: 0.8em;
-        padding-left: 0px;
-        letter-spacing: 0.5px;
-        flex: 1;
-    }
-
-    .mainDiv .managementBody .existingDocs .headers .actions{
-        font-size: 0.8em;
-        letter-spacing: 0.5px;
-        width: 50%;
-        text-align: center;
-    }
-
-    .mainDiv .managementBody .docDiv{
-        height: auto;
-        width: calc(100% - 20px);
-        display: flex;
-        align-items: center;
-        margin-top: 10px;
-        padding-top: 10px;
-        padding-bottom: 10px;
-        position: relative;
-        left: 10px;
-        border: 1px solid #3b47548e;
-        border-radius: 8px;
-        background-color: #1e2228;
-    }
-
-    .mainDiv .managementBody .docDiv .docPfp{
-        display: none;
-    }
-
-    .mainDiv .managementBody .docDiv p{
-        text-align: center;
-        font-size: 0.8em;
-        padding-left: 0px;
-        letter-spacing: 0.5px;
-        flex: 1;
-    }
-
-    .mainDiv .managementBody .docDiv .actionBtns{
-        font-size: 0.8em;
-        letter-spacing: 0.5px;
-        width: 50%;
-        text-align: center;
+    .sidebar .hospitalBranding .hospitalName span{
+        display: block;
     }
 }

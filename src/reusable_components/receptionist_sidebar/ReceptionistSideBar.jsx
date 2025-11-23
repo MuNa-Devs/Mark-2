@@ -27,6 +27,7 @@ export default function ReceptionistSidebar(props){
             </div>
 
             <div className={styles.sidebarOptions}>
+                <button className={styles.utilOptions}><i className="fa-solid fa-list"></i></button>
                 <button className={styles.settings}><i className="fa-solid fa-gear"></i> <span>Settings</span></button>
                 <button className={styles.logout}><i className="fa-solid fa-arrow-right-from-bracket"></i> <span>Log Out</span></button>
             </div>

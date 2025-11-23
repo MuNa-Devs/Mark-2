@@ -56,6 +56,11 @@
     color: rgb(255, 25, 0);
 }
 
+.titlebar .topButtons .cancel,
+.titlebar .topButtons .save{
+    display: none;
+}
+
 .sections{
     flex: 1;
     display: flex;
@@ -88,7 +93,30 @@
     top: 1.5px;
 }
 
-.sections .profilePic{
+.sections .sectionHeaders .sectionIcon{
+    display: none;
+}
+
+.sections .sectionBodyContainer{
+    height: auto;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    flex: 1;
+    max-height: 300px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    scroll-behavior: smooth;
+    border-bottom: 1px solid #3b4754;
+} .sections .sectionBodyContainer::-webkit-scrollbar {
+    width: 4px;
+} .sections .sectionBodyContainer::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+}
+
+.sections .sectionBodyContainer .profilePic{
     height: auto;
     width: 100%;
     padding: 16px;
@@ -98,14 +126,14 @@
     gap: 16px;
 }
 
-.sections .profilePic .image{
+.sections .sectionBodyContainer .profilePic .image{
     height: 80px;
     width: 80px;
     border-radius: 50%;
     background-color: #2a2f36;
 }
 
-.sections .profilePic .uploadBtn{
+.sections .sectionBodyContainer .profilePic .uploadBtn{
     height: 100%;
     width: auto;
     display: flex;
@@ -135,13 +163,12 @@
     color: #9dabb9;
 }
 
-.sections .details {
+.sections .details{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 20px;
     column-gap: 40px;
     width: 100%;
-    border-bottom: 1px solid #3b4754;
     padding-bottom: 20px;
 }
 
@@ -168,16 +195,17 @@
     outline: none;
 }
 
-.sections .bottomButtons{
+.bottomButtons{
     width: 100%;
     height: auto;
     display: flex;
     align-items: center;
     justify-content: flex-end;
+    padding-bottom: 20px;
     gap: 10px;
 }
 
-.sections .bottomButtons button{
+.bottomButtons button{
     padding: 8px;
     padding-left: 16px;
     padding-right: 16px;
@@ -188,15 +216,104 @@
     cursor: pointer;
 }
 
-.sections .bottomButtons .cancel{
+.bottomButtons .cancel{
     color: #adb2b6;
     background-color: transparent;
-} .sections .bottomButtons .cancel:hover{
+} .bottomButtons .cancel:hover{
     background-color: rgb(255, 54, 32);
     color: #e2e8f0;
 }
 
-.sections .bottomButtons .save{
+.bottomButtons .save{
     color: #e2e8f0;
     background-color: #137fec;
+}
+
+/* Media Queries */
+
+@media (max-width: 860px){
+    .sections .details{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        column-gap: 40px;
+        width: 100%;
+        border-bottom: 1px solid #3b4754;
+        padding-bottom: 20px;
+    }
+}
+
+@media (max-height: 670px){
+    .bottomButtons{
+        display: none;
+    }
+
+    .titlebar .topButtons .cancel,
+    .titlebar .topButtons .save{
+        padding: 8px;
+        padding-left: 16px;
+        padding-right: 16px;
+        border: none;
+        border-radius: 8px;
+        font-size: 0.8em;
+        letter-spacing: 0.5px;
+        cursor: pointer;
+
+        display: inline;
+    } .titlebar .topButtons .cancel{
+        color: #adb2b6;
+        background-color: transparent;
+    } .titlebar .topButtons .cancel:hover{
+        background-color: rgb(255, 54, 32);
+        color: #e2e8f0;
+    } .titlebar .topButtons .save{
+        color: #e2e8f0;
+        background-color: #137fec;
+    }
+
+     .titlebar .topButtons{
+        display: flex;
+        align-items: center;
+        justify-content: space-evenly;
+     }
+
+    .sections .sectionBodyContainer{
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 570px){
+    .sections .sectionHeaders .section{
+        display: none;
+    }
+
+    .sections .sectionHeaders .sectionIcon{
+        display: block;
+    }
+
+    .addNewDocSec{
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        
+        width: 65dvw;
+        max-width: 800px;
+        height: 65dvh;
+        max-height: 550px;
+
+        background-color: #101922;
+        border-radius: 12px;
+        padding: 16px;
+
+        box-shadow: 0 0 40px rgba(0,0,0,0.8);
+        z-index: 999;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 32px;
+
+        min-width: 280px;
+    }
 }

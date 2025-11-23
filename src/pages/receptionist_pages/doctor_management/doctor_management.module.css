@@ -13,10 +13,6 @@ h4, h3, p {
     color: #e8ecf2;
 }
 
-.sidebarAtTop{
-    display: none;
-}
-
 .mainDiv{
     flex: 1;
     height: 100%;
@@ -264,127 +260,7 @@ h4, h3, p {
     }
 }
 
-@media (max-width: 870px){
-    .sidebar span{
-        display: none;
-    }
-
-    .sidebar .utilities .utilOptions{
-        display: block;
-    }
-
-    .sidebar .utilities button{
-        width: auto;
-        height: auto;
-        border-radius: 50%;
-        padding: 10px;
-        text-align: center;
-        justify-content: center;
-    }
-
-    .sidebar .sidebarOptions{
-        height: auto;
-        width: auto;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        gap: 10px;
-    }
-
-    .sidebar .sidebarOptions button{
-        width: auto;
-        height: auto;
-        border-radius: 50%;
-        padding: 10px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .sidebar .hospitalBranding{
-        height: auto;
-        width: 100%;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-        padding-top: 30px;
-        padding-left: 5px;
-        padding-bottom: 30px;
-    }
-
-    .sidebar .hospitalBranding .logo{
-        height: 40px;
-        width: 40px;
-        padding: 0;
-        margin: 0;
-        border-radius: 50%;
-        background-color: #2a2f36;
-    }
-
-    .sidebar{
-        width: auto;
-        padding: 0;
-    }
-}
-
 @media (max-width: 600px){
-
-    .sidebarAtTop{
-        width: 100dvw;
-        height: auto;
-        display: flex;
-        justify-content: space-between;
-        padding: 0;
-        margin: 0;
-        background-color: #1c1f25;
-        border-bottom: 1px solid #2a2f36;
-    }
-
-    .ensureTogether{
-        height: 100%;
-        width: 50%;
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        gap: 10px;
-    }
-
-    .sidebarAtTop .utilities button{
-        display: none;
-    }
-
-    .sidebarAtTop .utilities{
-        height: 100%;
-        flex: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-    }
-
-    .sidebarAtTop .sidebarOptions{
-        width: 50%;
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        justify-content: flex-end;
-        gap: 10px;
-    }
-
-    .sidebarAtTop .sidebarOptions span{
-        display: none;
-    }
-
-    .sidebarAtTop .sidebarOptions button{
-        background-color: transparent;
-        border: none;
-    } .sidebarAtTop .sidebarOptions .utilOptions{
-        color: #e8ecf2;
-    }
 
     .doctorManagementBody{
         padding: 0;
@@ -396,10 +272,6 @@ h4, h3, p {
         width: 100dvw;
         background-color: #121417;
         color: #e8ecf2;
-    }
-
-    .sidebar{
-        display: none;
     }
 }
 
