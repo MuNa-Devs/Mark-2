@@ -1,0 +1,125 @@
+.tableWrapper {
+  width: 97%;
+  background-color: transparent;
+  padding: 20px;
+  border-radius: 14px;
+
+  /* Make table body scrollable */
+  height: 350px;   
+  overflow-y: auto;
+
+  scrollbar-width: thin;
+  scrollbar-color: #3b4754 transparent;
+}
+
+/* Sticky header */
+.table thead {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  border-radius: 10px;
+  background-color: #1f2a38;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+
+}
+
+/* Ensures only header row has background */
+.table thead th {
+  background-color: #1f2a38 !important; 
+}
+
+/* Table base */
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  color: white;
+  font-size: 14px;
+}
+
+/* Header row styling */
+th {
+  text-align: left;
+  padding: 14px 10px;
+  color: #8b9bb0;
+  font-weight: 600;
+  font-size: 12px;
+  border-bottom: 1px solid #2c3a4a;;
+}
+
+/* Transparent data rows */
+td {
+  padding: 16px 10px;
+  border-bottom: 1px solid #2c3a4a;
+  background-color: transparent!important;
+}
+
+tr {
+  background-color: transparent !important;
+}
+
+/* Hover effect */
+tbody tr:hover {
+  background-color: rgba(255, 255, 255, 0.05) !important;
+}
+
+/* Patient column bold */
+.patient {
+  font-weight: 600;
+}
+
+.status {
+  padding: 5px 12px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: capitalize;
+}
+
+/* Status Colors */
+.approved {
+  background-color: #1b6b41;
+  color: #b2ffd6;
+}
+
+.pending {
+  background-color: #794b00;
+  color: #ffdf9a;
+}
+
+.checked-in {
+  background-color: #003b7a;
+  color: #a8d8ff;
+}
+
+.rejected {
+  background-color: #7a1b1b;
+  color: #ffb2b2;
+}
+
+.moreBtn {
+  background: transparent;
+  border: none;
+  color: #9ba9b9;
+  font-size: 20px;
+  cursor: pointer;
+}
+/* Important: solid background on full header row */
+.table thead tr {
+  background-color: #1f2a38 !important;
+}
+.tableWrapper {
+  position: relative;
+}
+
+.table thead {
+  position: sticky;
+  top: 0;
+  z-index: 999 !important;
+}
+
+.table thead th {
+  background-color: #1f2a38 !important;
+  position: sticky;
+  top: 0;
+  z-index: 999 !important;
+}

@@ -1,4 +1,5 @@
 import React from 'react';
+import AppointmentTable from "./AppointmentTable";
 import styles from './appointment_management.module.css'
 import Sidebar from '../../../reusable_components/receptionist_sidebar/ReceptionistSideBar';
 import ScrollDownBox from '../../../reusable_components/scroll_downs/ScrollDownBox'
@@ -16,6 +17,7 @@ export default function Appointment_Managment(){
             <div className={styles.inputContainer}>
                 <div className={styles.inputBox}><input className={styles.input} type="text" placeholder="search for appointments"></input></div>
     <div className={styles.scrollDowns}>
+      <div className={styles.scrollContainer}>
       <ScrollDownBox 
         label="Status"
         options={["Dr. Ravi", "Dr. Kiran", "Dr. Vishal"]}
@@ -29,10 +31,12 @@ export default function Appointment_Managment(){
       <ScrollDownBox 
         label="Doctor"
         options={["10:00 AM", "12:00 PM", "3:00 PM"]}
-      />
+      /></div>
     </div>
             </div>
-            <div className={styles.data}></div>
+            <div className={styles.data}>
+              <AppointmentTable/>
+            </div>
             </div>
         </div>
 
