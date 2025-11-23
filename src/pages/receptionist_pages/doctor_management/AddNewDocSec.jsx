@@ -11,7 +11,7 @@ export default function AddNewDocSec(props) {
                     <div className={styles.topButtons}>
                         <button className={styles.cancel}>Cancel</button>
 
-                        <button className={styles.save}><i class="fa-regular fa-cloud"></i> Save</button>
+                        <button className={styles.save}><i className="fa-regular fa-cloud"></i> Save</button>
 
                         <button
                             onClick={props.closeHook}
@@ -23,10 +23,10 @@ export default function AddNewDocSec(props) {
                 <div className={styles.sections}>
                     <div className={styles.sectionHeaders}>
                         <button className={`${styles.section} ${styles.activeSection}`}>Personal Information</button>
-                        <button className={`${styles.section} ${styles.sectionIcon} ${styles.activeSection}`}><i class="fa-regular fa-user"></i></button>
+                        <button className={`${styles.section} ${styles.sectionIcon} ${styles.activeSection}`}><i className="fa-regular fa-user"></i></button>
 
                         <button className={styles.section}>Professional Details</button>
-                        <button className={`${styles.section} ${styles.sectionIcon}`}><i class="fa-solid fa-user-tie"></i></button>
+                        <button className={`${styles.section} ${styles.sectionIcon}`}><i className="fa-solid fa-user-tie"></i></button>
                     </div>
 
                     <div className={styles.sectionBodyContainer}>
@@ -34,7 +34,7 @@ export default function AddNewDocSec(props) {
                             <div className={styles.image}></div>
 
                             <div className={styles.uploadBtn}>
-                                <button><i class="fa-regular fa-image"></i> Upload Photo</button>
+                                <button><i className="fa-regular fa-image"></i> Upload Photo</button>
 
                                 <p>PNG or JPEG, max 2MB.</p>
                             </div>
@@ -71,7 +71,7 @@ export default function AddNewDocSec(props) {
                 <div className={styles.bottomButtons}>
                     <button className={styles.cancel}>Cancel</button>
 
-                    <button className={styles.save}><i class="fa-regular fa-cloud"></i> Save</button>
+                    <button className={styles.save}><i className="fa-regular fa-cloud"></i> Save</button>
                 </div>
             </div>
         </div>

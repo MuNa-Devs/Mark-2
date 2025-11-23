@@ -1,6 +1,9 @@
 import styles from './receptionist_sidebar.module.css'
 
+import { useNavigate } from 'react-router-dom';
+
 export default function ReceptionistSidebar(props){
+    const navigate = useNavigate();
 
     return(
         <div className={styles.sidebar}>
@@ -17,12 +20,28 @@ export default function ReceptionistSidebar(props){
                 </div>
 
                 <div className={styles.utilities}>
-                    <button className={styles.utilOptions}><i className="fa-solid fa-list"></i></button>
-                    <button className={props.page === "dashboard" ? styles.activePage: ""}><i className="fa-solid fa-table-columns"></i> <span>Dashboard</span></button>
-                    <button className={props.page === "appointments" ? styles.activePage: ""}><i className="fa-solid fa-calendar-days"></i> <span>Appointments</span></button>
-                    <button className={props.page === "patients" ? styles.activePage: ""}><i className="fa-solid fa-users"></i> <span>Patients</span></button>
-                    <button className={props.page === "doctors" ? styles.activePage: ""}><i className="fa-solid fa-user-doctor"></i> <span>Manage Doctors</span></button>
-                    <button className={props.page === "billing" ? styles.activePage: ""}><i className="fa-solid fa-receipt"></i>  <span>Billing</span></button>
+                    <button className={styles.utilOptions}
+                    ><i className="fa-solid fa-list"></i></button>
+
+                    <button className={props.page === "dashboard" ? styles.activePage: ""}
+                        onClick={() => navigate("/dashboard")}
+                    ><i className="fa-solid fa-table-columns"></i> <span>Dashboard</span></button>
+
+                    <button className={props.page === "appointments" ? styles.activePage: ""}
+                        onClick={() => navigate("/appointmentmanagment")}
+                    ><i className="fa-solid fa-calendar-days"></i> <span>Appointments</span></button>
+
+                    <button className={props.page === "patients" ? styles.activePage: ""}
+                        onClick={() => navigate("/patients")}
+                    ><i className="fa-solid fa-users"></i> <span>Patients</span></button>
+
+                    <button className={props.page === "doctors" ? styles.activePage: ""}
+                        onClick={() => navigate("/doctormanagement")}
+                    ><i className="fa-solid fa-user-doctor"></i> <span>Manage Doctors</span></button>
+
+                    <button className={props.page === "billing" ? styles.activePage: ""}
+                        onClick={() => navigate("/billing")}
+                    ><i className="fa-solid fa-receipt"></i> <span>Billing</span></button>
                 </div>
             </div>
 

@@ -9,9 +9,10 @@ import styles from './signup_page.module.css';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useNavigate } from 'react-router-dom';
+import axios from 'axios';
 
 // Signup page component
-export default function SignUpPage(){
+export default function SignUpPage() {
     const navigate = useNavigate();
 
     // <--- State variables --->
@@ -21,7 +22,7 @@ export default function SignUpPage(){
         email: "",
         password: "",
         conf_password: ""
-    })
+    });
 
     // Stores the error status (empty or not); initially no errors
     const [input_err_status, setInputErrStatus] = useState({
@@ -33,7 +34,7 @@ export default function SignUpPage(){
 
     const [is_signup_triggered, setSignupTriggerStatus] = useState(false);
     const [signup_status, setSignupStatus] = useState(true);
-
+    
 
     // Updates the input field that is being changed
     const handleInputUpdates = (e) => {
@@ -60,27 +61,40 @@ export default function SignUpPage(){
         // Disable signup button to stop multiple triggers
         setSignupTriggerStatus(true);
 
-        fetch("http://10.173.8.145:9999/register", {
-            method: "POST",
-            headers: {
-                "content-type": "application/json"
-            },
-            body: JSON.stringify(input)
-        })
-        .then(res => res.json())
-        .then(data => {
+        axios.post("http://10.173.8.77:9999/base/register", 
+            input,
+            {timeout: 3000}
+        )
+        .then(res => {
+            const data = res.data;
             const end = Date.now();
-            console.log("Server response on '" + data.request + "':");
-            console.log("Method: " + data.method);
-            console.log("Status:" + data.status);
-            console.log("Time taken: " + (end - start) + "ms");
+            console.log(
+                "Server response on '" + data.request + "':" +
+                "\nMethod: " + data.method +
+                "\nStatus: " + res.status +
+                "\nTime taken: " + (end - start) + "ms"
+            );
 
-            if (data.condition) navigate("/home");
-            setSignupStatus(data.condition);
+            if (data.condition){
+                setSignupStatus(true);
+                navigate("/dashboard");
+            }
+
+            else setSignupStatus("unknown");
+            
+            setSignupTriggerStatus(false);
         })
-        .catch(err => console.error(err));
+        .catch(err => {
+            if (err.code === "ECONNABORTED") setSignupStatus("timeout");
+            else{
+                setSignupStatus("failed");
+                console.log(err)
+            }
+            
+            setSignupTriggerStatus(false);
+        });
     }
-    
+
     return (
         <div className={styles.signupBody}>
             <div className={styles.headerTexts}>
@@ -98,57 +112,59 @@ export default function SignUpPage(){
                 <div className={styles.name}>
                     <h5>Full Name</h5>
 
-                    <input className={styles.text} 
+                    <input className={styles.text}
                         name="username"
-                        type="text" 
+                        type="text"
                         placeholder='Enter your name'
                         value={input.username}
                         onChange={handleInputUpdates}
-                        style={{outline: input_err_status.username && "1px solid red"}}
+                        style={{ outline: input_err_status.username && "1px solid red" }}
                     />
                 </div>
 
                 <div className={styles.email}>
                     <h5>Email or Phone</h5>
 
-                    <input className={styles.text} 
+                    <input className={styles.text}
                         name='email'
-                        type="email" 
+                        type="email"
                         placeholder='Email or Phone number'
                         value={input.email}
                         onChange={handleInputUpdates}
-                        style={{outline: input_err_status.email && "1px solid red"}}
+                        style={{ outline: input_err_status.email && "1px solid red" }}
                     />
                 </div>
 
                 <div className={styles.password}>
                     <h5>Create password</h5>
 
-                    <input className={styles.text} 
+                    <input className={styles.text}
                         name='password'
-                        type="password" 
+                        type="password"
                         placeholder='Enter your password'
                         value={input.password}
                         onChange={handleInputUpdates}
-                        style={{outline: input_err_status.password && "1px solid red"}}
+                        style={{ outline: input_err_status.password && "1px solid red" }}
                     />
                 </div>
 
                 <div className={styles.confPassword}>
                     <h5>Confirm password</h5>
 
-                    <input className={styles.text} 
+                    <input className={styles.text}
                         name='conf_password'
-                        type="password" 
+                        type="password"
                         placeholder='Re-enter your password'
                         value={input.conf_password}
                         onChange={handleInputUpdates}
-                        style={{outline: input_err_status.conf_password && "1px solid red"}}
+                        style={{ outline: input_err_status.conf_password && "1px solid red" }}
                     />
                 </div>
 
-                {Object.values(input_err_status).includes(true) && <WarningDiv warning_text='All fields are required!'/>}
-                {! signup_status && <WarningDiv />}
+                {Object.values(input_err_status).includes(true) && <WarningDiv warning_text='All fields are required!' /> ||
+                signup_status === "timeout" && <WarningDiv warning_text='Request timed out! try again later.' /> ||
+                signup_status === "failed" && <WarningDiv warning_text='Request failed!' /> ||
+                signup_status === "unknown" && <WarningDiv />}
 
                 <button
                     className={styles.signupBtn}
