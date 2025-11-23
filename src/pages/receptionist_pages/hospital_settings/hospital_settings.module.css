@@ -9,6 +9,8 @@
 
 .sectionBody{
     flex: 1;
+    height: auto;
     padding: 0;
     margin: 0;
+    background-color: #121417;
 }

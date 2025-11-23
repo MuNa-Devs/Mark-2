@@ -1,8 +1,27 @@
 import styles from './settings_sidebar.module.css'
+import General from './sections/general/General';
+import OPTimings from './sections/op_timings/OPTimings';
+import Holidays from './sections/holidays/Holidays';
+import Services from "./sections/services/Services";
 
 import { useNavigate } from 'react-router-dom';
 
-export default function ReceptionistSidebar(props) {
+export function Manager({section}){
+
+    switch (section){
+        case "general": return <General />;
+
+        case "optimings": return <OPTimings />;
+
+        case "holidays": return <Holidays />;
+
+        case "services": return <Services />;
+
+        default: return <p>Hello world</p>
+    }
+}
+
+export function SettingSidebar(props) {
     const navigate = useNavigate();
 
     return (
@@ -28,19 +47,19 @@ export default function ReceptionistSidebar(props) {
                     ><i className="fa-solid fa-chevron-left"></i> <span>Back</span></button>
 
                     <button className={props.page === "general" ? styles.activePage : ""}
-                        onClick={() => navigate("/")}
+                        onClick={() => props.setSectionBody("general")}
                     ><i className="fa-solid fa-hammer"></i> <span>General</span></button>
 
-                    <button className={props.page === "op-timings" ? styles.activePage : ""}
-                        onClick={() => navigate("/")}
+                    <button className={props.page === "optimings" ? styles.activePage : ""}
+                        onClick={() => props.setSectionBody("optimings")}
                     ><i className="fa-solid fa-clock"></i> <span>OP Timings</span></button>
 
                     <button className={props.page === "holidays" ? styles.activePage : ""}
-                        onClick={() => navigate("/")}
+                        onClick={() => props.setSectionBody("holidays")}
                     ><i className="fa-solid fa-calendar-days"></i> <span>Holidays</span></button>
 
                     <button className={props.page === "services" ? styles.activePage : ""}
-                        onClick={() => navigate("/")}
+                        onClick={() => props.setSectionBody("services")}
                     ><i className="fa-solid fa-star"></i> <span>Services</span></button>
 
                     {props.page === '404' && <button className={styles.activePage}>Burra Poinda Bro</button>}
