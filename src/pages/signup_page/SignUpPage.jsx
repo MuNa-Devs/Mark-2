@@ -1,9 +1,11 @@
 // Components
 // import Logo from '../reusable_elements/Logo'
 import WarningDiv from '../../reusable_components/WarningDiv';
-
-// Style sheets
 import styles from './signup_page.module.css';
+
+// For global values from context provider
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthContext';
 
 // Package imports
 import { useState } from 'react';
@@ -13,6 +15,10 @@ import axios from 'axios';
 
 // Signup page component
 export default function SignUpPage() {
+
+    // Variables to handle login status (from context provider)
+    const {is_logged_in, setLogin, setLogOut} = useContext(AuthContext);
+
     const navigate = useNavigate();
 
     // <--- State variables --->
@@ -61,7 +67,7 @@ export default function SignUpPage() {
         // Disable signup button to stop multiple triggers
         setSignupTriggerStatus(true);
 
-        axios.post("http://10.173.8.77:9999/base/register", 
+        axios.post("http://192.168.137.1:9999/base/register", 
             input,
             {timeout: 3000}
         )
@@ -76,6 +82,7 @@ export default function SignUpPage() {
             );
 
             if (data.condition){
+                setLogin();
                 setSignupStatus(true);
                 navigate("/dashboard");
             }

@@ -1,7 +1,15 @@
 import Sidebar from '../../../reusable_components/receptionist_sidebar/ReceptionistSideBar';
 import styles from './dash_board.module.css';
+import { AuthContext } from '../../../AuthContext';
+
+import { useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function DashBoard(){
+    const {is_logged_in, setLogin, setLogOut} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    if (! is_logged_in) navigate("/login");
 
     return (
         <div className={styles.recDashBoard}>

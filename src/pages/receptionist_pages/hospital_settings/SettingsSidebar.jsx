@@ -4,7 +4,9 @@ import OPTimings from './sections/op_timings/OPTimings';
 import Holidays from './sections/holidays/Holidays';
 import Services from "./sections/services/Services";
 
-import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
+import { AuthContext } from '../../../AuthContext';
+
 import { useState } from 'react';
 
 export function Manager(props) {
@@ -30,7 +32,8 @@ export function Manager(props) {
     }
 }
 
-export function SettingSidebar(props) {
+export function SettingSidebar(props){
+    const {is_logged_in, setLogIn, setLogOut} = useContext(AuthContext);
     const [is_open, setIsOpen] = useState(false)
 
     return (
@@ -85,7 +88,10 @@ export function SettingSidebar(props) {
                     ><i className="fa-solid fa-list"></i></button>
 
                     <button className={styles.settings}><i className="fa-solid fa-gear"></i> <span>Settings</span></button>
-                    <button className={styles.logout}><i className="fa-solid fa-arrow-right-from-bracket"></i> <span>Log Out</span></button>
+
+                    <button className={styles.logout}
+                        onClick={() => setLogOut()}
+                    ><i className="fa-solid fa-arrow-right-from-bracket"></i> <span>Log Out</span></button>
                 </div>
             </div>
         </>

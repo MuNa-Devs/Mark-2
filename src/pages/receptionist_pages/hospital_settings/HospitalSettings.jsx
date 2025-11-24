@@ -1,10 +1,16 @@
 import styles from './hospital_settings.module.css';
 import { Manager, SettingSidebar } from './SettingsSidebar';
+import { AuthContext } from '../../../AuthContext';
 
-import { useLocation } from 'react-router-dom';
-import { useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
+import { useContext, useState } from 'react';
 
 export default function HospitalSettings(){
+    const {is_logged_in, setLogin, setLogOut} = useContext(AuthContext);
+    const navigate = useNavigate();
+
+    if (! is_logged_in) navigate("/login");
+
     const location = useLocation();
     const native = location.state?.from || "/";
 

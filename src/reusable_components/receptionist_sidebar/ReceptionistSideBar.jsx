@@ -1,9 +1,18 @@
 import styles from './receptionist_sidebar.module.css'
 
+
+// For global values from context provider
+import { useContext } from 'react';
+import { AuthContext } from '../../AuthContext';
+
 import { useNavigate } from 'react-router-dom';
 import { useState } from 'react';
 
-export default function ReceptionistSidebar(props) {
+export default function ReceptionistSidebar(props){
+
+    // Variables to handle login status (from context provider)
+    const {is_logged_in, setLogin, setLogOut} = useContext(AuthContext);
+
     const navigate = useNavigate();
     const [is_open, setIsOpen] = useState(false)
 
@@ -67,7 +76,9 @@ export default function ReceptionistSidebar(props) {
                     ><i className="fa-solid fa-list"></i></button>
 
                     <button className={styles.settings}><i className="fa-solid fa-gear"></i> <span>Settings</span></button>
-                    <button className={styles.logout}><i className="fa-solid fa-arrow-right-from-bracket"></i> <span>Log Out</span></button>
+                    <button className={styles.logout}
+                        onClick={() => setLogOut()}
+                    ><i className="fa-solid fa-arrow-right-from-bracket"></i> <span>Log Out</span></button>
                 </div>
             </div>
         </>
