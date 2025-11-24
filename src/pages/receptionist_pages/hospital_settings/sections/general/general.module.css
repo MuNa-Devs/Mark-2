@@ -12,6 +12,25 @@
     letter-spacing: 0.7px;
 }
 
+.header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.backBtn{
+    background-color: transparent;
+    border: none;
+    width: auto;
+    height: 100%;
+    cursor: pointer;
+}
+
+.backBtn i, .backBtn span{
+    color: #ff5f5f;
+}
+
 .hospitalInfo, .contactInfo{
     width: calc(100% - 40px);
     height: auto;

@@ -1,5 +1,7 @@
 import styles from './op_timings.module.css';
 import OpForWeek from './OpForWeek';
+import HolidaysCard from './HolidaysCard';
+import ServicesCard from './ServicesCard';
 
 export default function OPTimings() {
     const days = [
@@ -14,7 +16,13 @@ export default function OPTimings() {
 
     return (
         <div className={styles.generalScreen}>
-            <h1>Hospital Settings</h1>
+            <div className={styles.header}>
+                <h1>Hospital Settings</h1>
+
+                <button className={styles.backBtn}
+                    onClick={() => navigate(props.back_location)}
+                ><i className="fa-solid fa-chevron-left"></i> <span>Back</span></button>
+            </div>
 
             <div className={styles.opdepTimings}>
                 <h3>Outpatient Department Timings</h3>
@@ -28,11 +36,29 @@ export default function OPTimings() {
 
             <div className={styles.opHolidayCalendar}>
                 <h3>Outpatient Department Holiday Calendar</h3>
+
+                <div className={styles.opHolidayHeader}>
+                    <h5>Configured Holidays</h5>
+
+                    <button className={styles.whenWide}><i className="fa-solid fa-plus"></i> Add New Holiday</button>
+                    <button className={styles.whenNarrow}><i className="fa-solid fa-plus"></i> Holiday</button>
+                </div>
+
+                <HolidaysCard holiday="Lorem ipsum dolor" date="January 1, 2001" />
             </div>
 
             <div className={styles.specialServices}>
-                <h3>Special Services Offered</h3>
+                <div className={styles.spServicesHeader}>
+                    <h3>Special Services Offered</h3>
+
+                    <button className={styles.whenWide}><i className="fa-solid fa-plus"></i> Add Service</button>
+                    <button className={styles.whenNarrow}><i className="fa-solid fa-plus"></i> Service</button>
+                </div>
+
+                <ServicesCard service="Lorem ipsum dolor" />
             </div>
+
+            <div className={styles.bufferDiv}></div>
         </div>
     );
 }

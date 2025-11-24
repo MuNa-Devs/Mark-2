@@ -1,7 +1,7 @@
 const flatColors = {
   body: "#101922",
   sidebar: "#1c2127",
-  header: "#1c2127",
+  header: "#1c2127ff",
   card: "#1c2127",
   input: "#283039",
   border: "#3b4754",
@@ -10,6 +10,6 @@ const flatColors = {
   textMuted: "#9dabb9",
   blue: "#137fec",
   blueHover: "#0f6dc7",
-  blueTransparent: "rgba(19, 127, 236, 0.2)",
+  blueTransparent: "#137fec33",
   blueTransparentHover: "rgba(19, 127, 236, 0.3)"
 };

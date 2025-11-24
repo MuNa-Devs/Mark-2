@@ -1,0 +1,81 @@
+.holidaysCard, .servicesCard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: calc(100% - 80px);
+    height: auto;
+    margin-left: 24px;
+    margin-bottom: 8px;
+    padding: 16px;
+    border: 1px solid #3b47546f;
+    border-radius: 8px;
+    background-color: #252a31;
+}
+
+.text{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    flex: 1;
+    gap: 4px;
+}
+
+.holidayName, .serviceName{
+    font-size: 0.85em;
+    letter-spacing: 0.5px;
+    color: #e2e8f0;
+}
+
+.date{
+    font-size: 0.8em;
+    letter-spacing: 0.5px;
+    color: #9dabb9;
+}
+
+.btns{
+    height: 100%;
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-evenly;
+    padding-left: 16px;
+    padding-right: 16px;
+    gap: 1.5em;
+}
+
+.btns button{
+    background-color: transparent;
+    border: none;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+}
+
+.btns button i{
+    color: #ff5f5f;
+}
+
+/* Media Queries */
+
+@media (max-width: 480px){
+    .holidaysCard, .servicesCard{
+        width: calc(100% - 64px);
+        margin-left: 16px;
+        margin-bottom: 8px;
+        padding: 16px;
+    }
+
+    .btns{
+        height: 100%;
+        width: auto;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        padding-left: 8px;
+        padding-right: 4px;
+        gap: 0.8em;
+    }
+}

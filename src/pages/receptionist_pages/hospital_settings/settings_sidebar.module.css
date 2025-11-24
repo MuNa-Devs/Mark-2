@@ -10,6 +10,10 @@
     border-right: 1px solid #2a2f36;
 }
 
+.sidebar .blurDiv{
+    display: none;
+}
+
 .ensureTogether{
     height: auto;
     width: 100%;
@@ -65,6 +69,12 @@
     display: none;
 }
 
+.sidebar .collapseOpen{
+    display: none;
+} .sidebar .collapseOpen i{
+    color: #ff5f5f;
+}
+
 .sidebar .utilities button{
     height: auto;
     width: calc(100% - 40px);
@@ -78,11 +88,6 @@
     padding: 10px;
     padding-left: 20px;
     cursor: pointer;
-}
-
-.sidebar .utilities .backBtn i,
-.sidebar .utilities .backBtn span{
-    color: #ff5f5f;
 }
 
 .sidebar .utilities .activePage{
@@ -104,10 +109,6 @@
     align-items: center;
     justify-content: space-evenly;
     gap: 10px;
-}
-
-.sidebar .sidebarOptions .backBtn{
-    display: none;
 }
 
 .sidebar .sidebarOptions .settings,
@@ -233,10 +234,6 @@
         display: none;
     }
 
-    .sidebar .utilities .backBtn{
-        display: none;
-    }
-
     .sidebar .sidebarOptions{
         width: 50%;
         display: flex;
@@ -264,13 +261,158 @@
     } .sidebar .sidebarOptions .utilOptions{
         color: #e8ecf2;
         display: block;
-    } .sidebar .sidebarOptions .backBtn{
-        display: block;
-    } .sidebar .sidebarOptions .backBtn i{
-        color: rgb(255, 29, 29);
     }
 
     .sidebar .hospitalBranding .hospitalName span{
         display: block;
     }
+}
+
+/* Clicking hamburger triggers these: */
+.sidebar.open {
+    width: 15rem !important;
+    height: 100dvh !important;
+    flex-direction: column !important;
+    border-right: 1px solid #2a2f36 !important;
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    z-index: 999 !important;
+}
+
+.open.blurDiv{
+    display: block;
+    height: 100dvh;
+    width: 100dvw;
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    z-index: 100;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.sidebar.open .ensureTogether{
+    height: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: space-between !important;
+    gap: 10px !important;
+}
+
+.sidebar.open .hospitalBranding{
+    height: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 10px !important;
+    margin: 0 !important;
+    padding-top: 20px !important;
+    padding-bottom: 20px !important;
+}
+
+.sidebar.open .hospitalBranding .logo{
+    height: 50px !important;
+    width: 50px !important;
+    border-radius: 50% !important;
+    background-color: #2a2f36 !important;
+}
+
+.sidebar.open .utilities{
+    height: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-evenly !important;
+    gap: 10px !important;
+}
+
+.open.collapseOpen{
+    display: block;
+}
+
+.sidebar.open .utilities .utilOptions, 
+.sidebar.open .sidebarOptions .utilOptions{
+    color: #e8ecf2 !important;
+    display: none !important;
+}
+
+.sidebar.open .utilities button{
+    height: auto !important;
+    width: calc(100% - 40px) !important;
+    background-color: transparent !important;
+    border-radius: 8px !important;
+    border: none !important;
+    color: #e8ecf2 !important;
+    text-align: left !important;
+    font-size: 0.75em !important;
+    letter-spacing: 0.75px !important;
+    padding: 10px !important;
+    padding-left: 20px !important;
+    cursor: pointer !important;
+}
+
+.sidebar.open .utilities .activePage{
+    background-color: #26303b !important;
+    outline: 1px solid #4da3ff !important;
+    color: #4da3ff !important;
+}
+
+.sidebar.open .sidebarOptions{
+    height: auto !important;
+    width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: space-evenly !important;
+    gap: 10px !important;
+}
+
+.sidebar.open .sidebarOptions button {
+    width: calc(100% - 40px) !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    border-radius: 8px !important;
+    padding-left: 20px !important;
+}
+
+.sidebar.open .sidebarOptions .settings,
+.sidebar.open .sidebarOptions .logout{
+    height: auto !important;
+    width: calc(100% - 40px) !important;
+    background-color: transparent !important;
+    border-radius: 8px !important;
+    border: none !important;
+    text-align: left !important;
+    font-size: 0.75em !important;
+    letter-spacing: 0.75px !important;
+    padding: 10px !important;
+    padding-left: 20px !important;
+    cursor: pointer !important;
+}
+
+.settings{
+    color: #e8ecf2 !important;
+}
+
+.sidebar.open .sidebarOptions .logout i, .sidebar.open .sidebarOptions .logout span{
+    color: #ff5f5f !important;
+}
+
+/* Show utilities back */
+.sidebar.open .utilities {
+    display: flex !important;
+}
+
+/* Show text labels again */
+.sidebar.open span {
+    display: inline !important;
+}
+
+/* Restore original layout */
+.sidebar.open .sidebarOptions {
+    flex-direction: column !important;
+    width: 100% !important;
 }

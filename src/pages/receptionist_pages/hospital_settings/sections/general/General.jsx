@@ -1,10 +1,19 @@
 import styles from './general.module.css';
 
-export default function General() {
+import { useNavigate } from 'react-router-dom';
+
+export default function General(props) {
+    const navigate = useNavigate();
 
     return (
         <div className={styles.generalScreen}>
-            <h1>Hospital Settings</h1>
+            <div className={styles.header}>
+                <h1>Hospital Settings</h1>
+
+                <button className={styles.backBtn}
+                    onClick={() => navigate(props.back_location)}
+                ><i className="fa-solid fa-chevron-left"></i> <span>Back</span></button>
+            </div>
 
             <div className={styles.hospitalInfo}>
                 <h3>Hospital Information</h3>

@@ -149,7 +149,7 @@ h4, h3, p {
     flex: 1;
     border: 1px solid #3b4754;
     border-bottom: none;
-    border-radius: 8px;
+    border-radius: 16px;
     padding-top: 10px;
 }
 

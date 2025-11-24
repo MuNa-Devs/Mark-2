@@ -17,7 +17,6 @@ export default function AddNewDocSec(props) {
                             onClick={props.closeHook}
                         ><i className="fa-solid fa-xmark"></i></button>
                     </div>
-
                 </div>
 
                 <div className={styles.sections}>

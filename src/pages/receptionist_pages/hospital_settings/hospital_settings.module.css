@@ -33,3 +33,9 @@
         padding: 0;
     }
 }
+
+@media (max-width: 550px){
+    .sectionBody{
+        padding: 15px;
+    }
+}
