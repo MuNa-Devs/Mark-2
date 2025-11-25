@@ -67,7 +67,7 @@ export default function SignUpPage() {
         // Disable signup button to stop multiple triggers
         setSignupTriggerStatus(true);
 
-        axios.post("http://192.168.137.1:9999/base/register", 
+        axios.post("http://192.168.1.3:9999/base/register", 
             input,
             {timeout: 3000}
         )

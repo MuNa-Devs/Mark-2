@@ -48,7 +48,7 @@ function SignInPage(){
         if (Object.values(temp_input_err_status).includes(true)) return;
 
         setLoginStatus(true);
-        axios.post("http://192.168.137.1:9999/base/login",
+        axios.post("http://192.168.1.3:9999/base/login",
             input,
             {timeout: 3000}
         )
@@ -66,7 +66,6 @@ function SignInPage(){
             if (data.condition){
                 setLogin();
                 navigate("/dashboard");
-                sessionStorage.setItem("is_logged_in", "true");
             }
 
             else{

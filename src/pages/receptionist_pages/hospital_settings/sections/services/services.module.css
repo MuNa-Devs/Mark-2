@@ -1,0 +1,96 @@
+.servicesBody {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    height: 100%;   /* full page height */
+    width: 100%;
+    background-color: antiquewhite;
+}
+
+/* Black bar */
+.headContainer {
+    height: 10%; /* FIXED HEIGHT → ensures white box is visible */
+    width: 100%;
+    border-radius: 15px;
+    background-color: black;
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-start; /* vertically centers white box */
+    padding-left: 20px;
+}
+
+/* White box */
+
+.bodyContainer{
+    height:80%;
+    width:100%;
+    background-color: blue;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+}
+.headContainer P{
+    color: whitesmoke;
+    margin-top: 9px;
+    font-size: 3em;
+    font-family: "Italian";
+    font-weight: bold;
+    margin-left: -18px;
+}
+.bodyHeaderContainer{
+    height:12%;
+    width:100%;
+    background-color: rgb(110, 110, 11);
+    margin-top: 0%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+.headerName{
+    height:100%;
+    width:45%;
+    background-color: rgb(43, 43, 43);
+    margin-left: 3%;
+    display: flex;
+    justify-content: flex-start;
+}
+.headerName P{
+    color: whitesmoke;
+    margin-top: 12px;
+    font-size: 2em;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    margin-left: 0px
+    ;
+}
+.buttonContainer{
+    height:100%;
+    width:40%;
+    background-color: rgb(173, 40, 40);
+    margin-right: 3%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.button{
+    background-color: rgb(32, 143, 240);
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition:all 0.3s ease;
+    height:70%;
+}
+.button:hover {
+    background-color: rgb(12, 102, 171);
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+
+}
+.line{
+  width: 100%;
+  height: 1px;
+  background-color: #d1d1d1;
+  margin-left: 1px;
+}
