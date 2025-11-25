@@ -8,7 +8,7 @@ import { useState } from "react";
 // (2) onChange function will let you run any function inside the module you imported this in.
 // Happy birthday 👍.
 
-export default function Toggle({ defaultValue = false, onChange = () => { } }) {
+export default function Toggle({defaultValue = false, onChange = () => {}}){
     const [isOn, setIsOn] = useState(defaultValue);
 
     const handleToggle = () => {

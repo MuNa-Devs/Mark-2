@@ -207,6 +207,12 @@ h4, h3, p {
     border-radius: 50%;
 }
 
+.mainDiv .managementBody .docDiv .docPfp img{
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+}
+
 .mainDiv .managementBody .docDiv p{
     flex: 1;
     word-wrap: break-word;
@@ -229,7 +235,7 @@ h4, h3, p {
     background-color: transparent;
     border: none;
     color: #4da3ff;
-    font-size: 0.85em;
+    font-size: 1.1em;
     cursor: pointer;
 }
 

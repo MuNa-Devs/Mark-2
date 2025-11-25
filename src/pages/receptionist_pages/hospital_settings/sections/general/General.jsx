@@ -18,6 +18,10 @@ export default function General(props) {
             <div className={styles.hospitalInfo}>
                 <h3>Hospital Information</h3>
 
+                <div className={styles.hospitalLogo}>
+
+                </div>
+
                 <div className={styles.nameSec}>
                     <h5>Hospital Name</h5>
                     <input type="text" placeholder='Hospital name' />
@@ -37,6 +41,12 @@ export default function General(props) {
                         rows={6}
                     ></textarea>
                 </div>
+
+                <div className={styles.wrapper}>
+                    <div className={styles.savBtn}>
+                        <button>Save Changes</button>
+                    </div>
+                </div>
             </div>
 
             <div className={styles.contactInfo}>
@@ -50,6 +60,12 @@ export default function General(props) {
                 <div className={styles.email}>
                     <h5>Email Address</h5>
                     <input type="email" placeholder='Email address' />
+                </div>
+
+                <div className={styles.wrapper}>
+                    <div className={styles.savBtn}>
+                        <button>Save Changes</button>
+                    </div>
                 </div>
             </div>
         </div>

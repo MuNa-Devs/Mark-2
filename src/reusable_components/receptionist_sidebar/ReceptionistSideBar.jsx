@@ -25,6 +25,10 @@ export default function ReceptionistSidebar(props){
                 <div className={styles.ensureTogether}>
                     <div className={styles.hospitalBranding}>
                         <div className={styles.logo}>
+                            <img
+                                src="https://www.logopeople.in/wp-content/uploads/2023/07/Inspiring-Hospital-Logo-Design-14.jpg"
+                                alt=""
+                            />
                         </div>
 
                         <div className={styles.hospitalName}>

@@ -1,6 +1,7 @@
 import styles from './doctor_management.module.css';
 import SideBar from '../../../reusable_components/receptionist_sidebar/ReceptionistSideBar'
 import AddNewDocSec from './AddNewDocSec';
+import DocDiv from './DocDiv';
 
 import { useState } from 'react';
 
@@ -52,19 +53,10 @@ export default function DoctorManagement(props) {
                             <div className={styles.actions}><p>Actions</p></div>
                         </div>
 
-                        <div className={styles.docDiv}>
-                            <div className={styles.docPfp}></div>
-
-                            <p>Lorem ipsum dolor sit amet.</p>
-
-                            <div className={styles.actionBtns}>
-                                <button><i className="fa-solid fa-pencil"></i></button>
-
-                                <button><i className="fa-solid fa-calendar-check"></i></button>
-
-                                <button><i className="fa-solid fa-toggle-on"></i></button>
-                            </div>
-                        </div>
+                        <DocDiv
+                            doctor="Dr. K. L. V. R. Naidy"
+                            profilepicURL="https://i.pinimg.com/236x/cd/e7/73/cde773e113620c91851ff948f76ad7dd.jpg"
+                        />
                     </div>
                 </div>
             </div>

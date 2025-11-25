@@ -1,21 +1,24 @@
 
-import { createContext, useState } from "react";
+import { createContext, useState, useContext } from "react";
 import { Navigate } from "react-router-dom";
 
 export const AuthContext = createContext();
 
 export default function AuthProvider({children}){
     const [is_logged_in, setIsLoggedIn] = useState(() => {
-        localStorage.getItem("is_logged_in") === "true";
+        const status = sessionStorage.getItem("is_logged_in");
+        
+        if (status === null) return false;
+        else return (status === "true");
     });
     
     const setLogin = () => {
         setIsLoggedIn(true);
-        localStorage.setItem("is_logged_in", "true");
+        sessionStorage.setItem("is_logged_in", "true");
     }
     const setLogOut = () => {
         setIsLoggedIn(false);
-        localStorage.setItem("is_logged_in", "false");
+        sessionStorage.setItem("is_logged_in", "false");
     }
     
     return (
@@ -26,7 +29,7 @@ export default function AuthProvider({children}){
 }
 
 export function LoginProtector({children}){
-    const is_logged_in = (localStorage.getItem("is_logged_in") === "true");
+    const {is_logged_in} = useContext(AuthContext);
 
     if (! is_logged_in)
         return <Navigate to="/login" replace />;
