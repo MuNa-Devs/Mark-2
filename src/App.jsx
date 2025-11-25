@@ -5,19 +5,19 @@ import DoctorManagement from "./pages/receptionist_pages/doctor_management/Docto
 import HospitalSettings from "./pages/receptionist_pages/hospital_settings/HospitalSettings";
 import Dorakaledu from "./pages/page_not_found/404";
 import AprilFool from "./pages/page_not_found/AprilFool";
-import { AuthContext } from "./AuthContext";
+import { AuthContext, LoginProtector } from "./AuthContext";
 
 import { Routes, Route } from "react-router-dom";
 import AppointmentManagment from "./pages/receptionist_pages/appointment_management/AppointmentManagement";
 import { useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 
-export default function App(){
-    const {is_logged_in, setLogin, setLogOut} = useContext(AuthContext);
+export default function App() {
+    const { is_logged_in, setLogin, setLogOut } = useContext(AuthContext);
     const navigate = useNavigate();
 
     useEffect(() => {
-        if (! is_logged_in) navigate("/login");
+        if (!is_logged_in) navigate("/login");
     }, [is_logged_in])
 
     return (
@@ -28,17 +28,41 @@ export default function App(){
 
             <Route path="/" element={<SignUpPage />} />
 
-            <Route path="/dashboard" element={<DashBoard />} />
+            <Route path="/dashboard" element={
+                <LoginProtector>
+                    <DashBoard />
+                </LoginProtector>
+            } />
 
-            <Route path="/doctormanagement" element={<DoctorManagement />} />
+            <Route path="/doctormanagement" element={
+                <LoginProtector>
+                    <DoctorManagement />
+                </LoginProtector>
+            } />
 
-            <Route path="/appointmentmanagment" element={<AppointmentManagment />} />
+            <Route path="/appointmentmanagment" element={
+                <LoginProtector>
+                    <AppointmentManagment />
+                </LoginProtector>
+            } />
 
-            <Route path="/hospitalsettings" element={<HospitalSettings />} />
+            <Route path="/hospitalsettings" element={
+                <LoginProtector>
+                    <HospitalSettings />
+                </LoginProtector>
+            } />
 
-            <Route path="/aprilfool" element={<AprilFool />} />
+            <Route path="/aprilfool" element={
+                <LoginProtector>
+                    <AprilFool />
+                </LoginProtector>
+            } />
 
-            <Route path="*" element={<Dorakaledu />} />
+            <Route path="*" element={
+                <LoginProtector>
+                    <Dorakaledu />
+                </LoginProtector>
+            } />
         </Routes>
     );
 }

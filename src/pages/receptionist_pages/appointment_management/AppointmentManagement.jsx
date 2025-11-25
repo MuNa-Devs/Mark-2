@@ -2,16 +2,8 @@ import AppointmentTable from "./AppointmentTable";
 import styles from './appointment_management.module.css'
 import Sidebar from '../../../reusable_components/receptionist_sidebar/ReceptionistSideBar';
 import ScrollDownBox from '../../../reusable_components/scroll_downs/ScrollDownBox'
-import { AuthContext } from "../../../AuthContext";
 
-import { useContext } from "react";
-import { useNavigate } from "react-router-dom";
-
-export default function Appointment_Managment() {
-    const {is_logged_in, setLogin, setLogOut} = useContext(AuthContext);
-    const navigate = useNavigate();
-
-    if (! is_logged_in) navigate("/login");
+export default function Appointment_Managment(){
 
     return (
         <div className={styles.appointmentManagmentBody}>

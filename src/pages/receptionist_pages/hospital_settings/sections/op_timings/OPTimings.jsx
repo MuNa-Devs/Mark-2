@@ -3,7 +3,11 @@ import OpForWeek from './OpForWeek';
 import HolidaysCard from './HolidaysCard';
 import ServicesCard from './ServicesCard';
 
-export default function OPTimings() {
+import { useNavigate } from 'react-router-dom';
+
+export default function OPTimings(props){
+    const navigate = useNavigate();
+
     const days = [
         "Monday",
         "Tuesday",

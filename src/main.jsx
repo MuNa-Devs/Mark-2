@@ -6,6 +6,8 @@ import './index.css';
 import App from './App.jsx';
 import AuthProvider from './AuthContext.jsx';
 
+localStorage.setItem("is_logged_in", "false");
+
 createRoot(document.getElementById('root')).render(
     <BrowserRouter basename="/">
         <AuthProvider>

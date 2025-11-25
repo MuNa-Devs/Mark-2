@@ -66,6 +66,7 @@ function SignInPage(){
             if (data.condition){
                 setLogin();
                 navigate("/dashboard");
+                sessionStorage.setItem("is_logged_in", "true");
             }
 
             else{

@@ -1,18 +1,11 @@
 import styles from './doctor_management.module.css';
 import SideBar from '../../../reusable_components/receptionist_sidebar/ReceptionistSideBar'
 import AddNewDocSec from './AddNewDocSec';
-import { AuthContext } from '../../../AuthContext';
 
-import { useState, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useState } from 'react';
 
 export default function DoctorManagement(props) {
     const [add_doc_open_status, setAddDocOpenStatus] = useState(false);
-
-    const {is_logged_in, setLogin, setLogOut} = useContext(AuthContext);
-    const navigate = useNavigate();
-
-    if (! is_logged_in) navigate("/login");
 
     return (
         <div className={styles.doctorManagementBody}>
