@@ -10,12 +10,8 @@ import { AuthContext, LoginProtector } from "./AuthContext";
 
 import { Routes, Route } from "react-router-dom";
 import AppointmentManagment from "./pages/receptionist_pages/appointment_management/AppointmentManagement";
-import { useNavigate } from "react-router-dom";
-import { useContext, useEffect } from "react";
 
 export default function App() {
-    const { is_logged_in, setLogin, setLogOut } = useContext(AuthContext);
-    const navigate = useNavigate();
 
     return (
         <Routes>

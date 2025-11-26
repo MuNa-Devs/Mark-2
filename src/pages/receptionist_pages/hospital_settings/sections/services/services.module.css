@@ -4,7 +4,7 @@
     gap: 20px;
     height: 100%;   /* full page height */
     width: 100%;
-    background-color: antiquewhite;
+    background-color: #101922;
 }
 
 /* Black bar */
@@ -12,7 +12,6 @@
     height: 10%; /* FIXED HEIGHT → ensures white box is visible */
     width: 100%;
     border-radius: 15px;
-    background-color: black;
     margin-top: 5px;
     display: flex;
     justify-content: flex-start; /* vertically centers white box */
@@ -22,15 +21,17 @@
 /* White box */
 
 .bodyContainer{
-    height:80%;
+    height:85%;
     width:100%;
-    background-color: blue;
+    background-color: #1b2551;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
+    align-items: center;
+    border: 1px solid #3b4754;
 }
 .headContainer P{
-    color: whitesmoke;
+    color: #ffffff;
     margin-top: 9px;
     font-size: 3em;
     font-family: "Italian";
@@ -40,7 +41,6 @@
 .bodyHeaderContainer{
     height:12%;
     width:100%;
-    background-color: rgb(110, 110, 11);
     margin-top: 0%;
     border-radius: 20px;
     display: flex;
@@ -49,14 +49,13 @@
 .headerName{
     height:100%;
     width:45%;
-    background-color: rgb(43, 43, 43);
     margin-left: 3%;
     display: flex;
     justify-content: flex-start;
 }
 .headerName P{
-    color: whitesmoke;
-    margin-top: 12px;
+    color:#ffffff;
+    margin-top: 14px;
     font-size: 2em;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-weight: bold;
@@ -66,7 +65,6 @@
 .buttonContainer{
     height:100%;
     width:40%;
-    background-color: rgb(173, 40, 40);
     margin-right: 3%;
     display: flex;
     justify-content: flex-end;
@@ -74,12 +72,12 @@
 }
 .button{
     background-color: rgb(32, 143, 240);
-    color: white;
+    color: #ffffff;
     border: none;
     padding: 10px 15px;
     border-radius: 5px;
     transition:all 0.3s ease;
-    height:70%;
+    height:65%;
 }
 .button:hover {
     background-color: rgb(12, 102, 171);
@@ -89,8 +87,145 @@
 
 }
 .line{
-  width: 100%;
+  width: 95%;
   height: 1px;
   background-color: #d1d1d1;
   margin-left: 1px;
 }
+.bigBox{
+    width:94%;
+    height:30%;
+    background-color: #1c2127;
+    margin-top: 15px;
+    border:2px solid #3b4754;
+    border-radius: 20px;
+    display: flex;
+}
+.smallBox1,.smallBox2,.smallBox3{
+    height:16%;
+    width:94%;
+    background-color: #1c2127;
+    margin-top:15px;
+    border-radius: 20px;
+    display: flex;
+    border:2px solid #3b4754;
+    margin-bottom: 9px;
+
+}
+.bigBox1,.bigBox2{
+    height:100%;
+    width: 50%;
+}
+
+.inputLeft,.inputRight{
+    height: 30%;
+    width: 90%;
+    border: none;
+    border-radius: 10px;
+
+    /* 🔍 Add search icon */
+    background: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 24 24'><path d='M21 20l-5.6-5.6a7 7 0 10-1.4 1.4L20 21l1-1zM4 10a6 6 0 1112 0 6 6 0 01-12 0z'/></svg>") 
+            no-repeat 10px center;
+    background-size: 18px;
+
+    /* Add padding so text doesn't overlap the icon */
+    padding-left: 40px;
+    background-color:#283039;
+    color: #ffffff;
+    margin-left: 10px;
+    margin-top: 9px;
+
+}
+.bigBox1 P,.bigBox2 P{
+    font-size: 1.35rem;
+    margin-left: 10px;
+    color:rgb(116, 126, 130);
+    margin-top: 18px;
+}
+.bigBox2 button{
+    background-color: rgb(32, 143, 240);
+    color: #ffffff;
+    border: none;
+    border-radius: 10px;
+    transition:all 0.3s ease;
+    height:20%;
+    margin-left:480px;
+    margin-top: 10px;
+    height:40px;
+
+}
+.bigBox2 button:hover{
+    background-color: rgb(12, 102, 171);
+    transform: scale(1.08);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.smallBoxTextContainer{
+    height: 100%;
+    width:55%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+.smallBoxButtonsContainer{
+    height: 100%;
+    width:45%;
+    border-radius: 20px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+}
+.smallBoxP1{
+    font-size: 1.2rem;
+    color:#ffffff;
+    margin-top: 18px;
+    margin-left: 10px;
+}
+.smallBoxP2{
+    font-size: 1.03rem;
+    color:rgb(116, 126, 130);
+    margin-top: 10px;
+    margin-left: 10px;
+
+}
+.editButton{
+    color:#ffffff;
+    font-size: 1.1rem;
+    transition: all 0.3s ease;
+}
+.buttons{
+    display: flex;
+    height:50%;
+    width:30%;
+    justify-content: space-between;
+    align-items: center;
+    margin-right: 10px;
+}
+.buttons button{
+    background-color: transparent;
+    border: none;
+    height: auto;
+    width: auto;
+    cursor: pointer;
+}
+.bin{
+    color: red;
+    height: 100%;
+    font-size: 1.2rem;
+    transition:all 0.3s ease;
+}
+.editButton:hover{
+    transform: scale(1.18);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+.bin:hover{
+    transform: scale(1.18);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+
+
