@@ -5,6 +5,7 @@ import DoctorManagement from "./pages/receptionist_pages/doctor_management/Docto
 import HospitalSettings from "./pages/receptionist_pages/hospital_settings/HospitalSettings";
 import Dorakaledu from "./pages/page_not_found/404";
 import AprilFool from "./pages/page_not_found/AprilFool";
+import HomePage from "./pages/home_page/HomePage";
 import { AuthContext, LoginProtector } from "./AuthContext";
 
 import { Routes, Route } from "react-router-dom";
@@ -22,11 +23,11 @@ export default function App() {
 
     return (
         <Routes>
+            <Route path="/" element={<HomePage />} />
+
             <Route path="/signup" element={<SignUpPage />} />
 
             <Route path="/login" element={<SignInPage />} />
-
-            <Route path="/" element={<SignUpPage />} />
 
             <Route path="/dashboard" element={
                 <LoginProtector>

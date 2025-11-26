@@ -23,9 +23,7 @@ export default function General(props) {
         email: ''
     });
 
-    const openFileSelector = () => {
-        document.getElementById("logo").click();
-    }
+    const openFileSelector = () => document.getElementById("logo").click();
 
     const handleHospitalDetails = (e) => {
         if (e.target.name === "logo") {
@@ -48,11 +46,11 @@ export default function General(props) {
     const setLogo = (e) => {
         file = e.target.files[0];
 
-        if (!file) return;
-
-        // Converting image into url:
-        const fileUrl = URL.createObjectURL(file);
-        document.getElementById("hosp_logo").src = fileUrl;
+        if (file){
+            // Converting image into url:
+            const fileUrl = URL.createObjectURL(file);
+            document.getElementById("hosp_logo").src = fileUrl;
+        }
     }
 
     const saveChanges = (e) => {
