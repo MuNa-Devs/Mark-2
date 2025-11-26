@@ -10,6 +10,7 @@ export default function DashBoard(){
             <Sidebar page="dashboard" location="/dashboard" />
 
             {/* Header */}
+            <div className={styles.mainDiv}>
             <div className={styles.header}>
                 <div className={styles.inputContainer}>
                     <input 
@@ -29,14 +30,14 @@ export default function DashBoard(){
 
             {/* Content */}
             <div className={styles.recContent}>
-                <div className={styles.topCards}>
+               <div className={styles.topCards}>
                     <div className={styles.card}>Total Patients Today</div>
                     <div className={styles.card}>Checked-In</div>
                     <div className={styles.card}>Pending Check-Ins</div>
                     <div className={styles.card}>Available Doctors</div>
-                </div>
 
-                <div className={styles.appointmentsSection}>
+            </div>
+                            <div className={styles.appointmentsSection}>
                     Today's Appointments Table
                 </div>
 
@@ -44,7 +45,8 @@ export default function DashBoard(){
                     Doctor Availability
                 </div>
 
-            </div>
+        </div>
+        </div>
         </div>
     );
 }
