@@ -17,10 +17,6 @@ export default function App() {
     const { is_logged_in, setLogin, setLogOut } = useContext(AuthContext);
     const navigate = useNavigate();
 
-    useEffect(() => {
-        if (!is_logged_in) navigate("/login");
-    }, [is_logged_in])
-
     return (
         <Routes>
             <Route path="/" element={<HomePage />} />
