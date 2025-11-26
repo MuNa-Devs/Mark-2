@@ -1,21 +1,42 @@
 import styles from './home_page.module.css';
+import { AuthContext } from '../../AuthContext';
 
-import { useState } from 'react';
+import { useState, useContext } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export default function HomePage(){
+
+    // -------------------------
+    // Selection and Navigation
+    // -------------------------
+    const navigate = useNavigate();
     const [selection, setSelection] = useState(null);
+
+    const navToLogin = () => {
+        
+        if (selection === "dp") navigate('/');
+
+        else if (selection === "rd") navigate('/login');
+
+        else if (selection === "pa") navigate('/');
+    }
 
     const roleSelected = (e) => setSelection(e.currentTarget.id);
 
+    // ------------------------------
+    // Access hosp_details variables
+    // ------------------------------
+    const {hosp_details} = useContext(AuthContext);
+    
     return (
         <div className={styles.homePage}>
             <div className={styles.header}>
                 <div className={styles.branding}>
                     <div className={styles.logo}>
-                        <img alt="" />
+                        <img src={hosp_details.img_url} alt="" />
                     </div>
 
-                    <h3>Lorem, ipsum dolor.</h3>
+                    <h3>{hosp_details.hosp_name}</h3>
                 </div>
 
                 <div className={styles.tools}>
@@ -26,7 +47,7 @@ export default function HomePage(){
             </div>
 
             <div className={styles.body}>
-                <h1>Welcome to {"Lorem, ipsum dolor."} Portal</h1>
+                <h1>Welcome to {hosp_details.hosp_name} Portal</h1>
 
                 <p>Please select your role to continue</p>
 
@@ -74,11 +95,11 @@ export default function HomePage(){
                     </div>
                 </div>
 
-                <button>Proceed to Login</button>
+                <button onClick={navToLogin}>Proceed to Login</button>
             </div>
 
             <div className={styles.devBranding}>
-                <p>Developed by Muna Devs</p>
+                <p>Developed by MuNa Devs</p>
             </div>
         </div>
     );

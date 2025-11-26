@@ -33,8 +33,19 @@ export function Manager(props) {
 }
 
 export function SettingSidebar(props){
-    const {is_logged_in, setLogIn, setLogOut} = useContext(AuthContext);
+
+    // ---------------------
+    // Handle Logout button
+    // ---------------------
+    // Variables to handle login status (from context provider)
+    const {is_logged_in, setLogin, setLogOut} = useContext(AuthContext);
+
     const [is_open, setIsOpen] = useState(false)
+
+    // ------------------------------
+    // Access hosp_details variables
+    // ------------------------------
+    const {hosp_details} = useContext(AuthContext);
 
     return (
         <>
@@ -46,13 +57,13 @@ export function SettingSidebar(props){
                     <div className={styles.hospitalBranding}>
                         <div className={styles.logo}>
                             <img
-                                src="https://www.logopeople.in/wp-content/uploads/2023/07/Inspiring-Hospital-Logo-Design-14.jpg"
+                                src={hosp_details.img_url || "https://www.shutterstock.com/image-vector/blank-image-photo-placeholder-icon-600nw-2501054919.jpg"}
                                 alt=""
                             />
                         </div>
 
                         <div className={styles.hospitalName}>
-                            <span><h4>Lorem ipsum dolor</h4></span>
+                            <span><h4>{hosp_details.hosp_name}</h4></span>
 
                             <span><p>Reception desk</p></span>
                         </div>

@@ -1,107 +1,112 @@
 import { useState } from 'react';
 import styles from './general.module.css';
+import { AuthContext } from '../../../../../AuthContext';
 
 import { useNavigate } from 'react-router-dom';
+import { useContext } from 'react';
 import axios from 'axios';
+import { serverurl } from '../../../../../../handlings/LocalConstants';
 
 export default function General(props) {
     const navigate = useNavigate();
+
+    // -------------------------------------
+    // Syncing entered values and save them
+    // -------------------------------------
     let file = null;
 
-    const [hosp_save_status, setHospSaveStatus] = useState(false);
-    const [cont_save_status, setContSaveStatus] = useState(false);
+    // Store if button is triggered
+    const [save_status, setSaveStatus] = useState(false);
 
-    const [hosp_details, setHospDetails] = useState({
+    const [details_local, setDetails_local] = useState({
         logo: '',
         hosp_name: '',
         address: '',
-        description: ''
-    });
-
-    const [contact_details, setContactdetails] = useState({
+        description: '',
         phone: '',
         email: ''
     });
 
+    // Open file selector window
     const openFileSelector = () => document.getElementById("logo").click();
 
-    const handleHospitalDetails = (e) => {
+    // Sync hospital details sec
+    const handleDetails = (e) => {
         if (e.target.name === "logo") {
-            setHospDetails({
-                ...hosp_details, [e.target.name]: e.target.files[0]
+            setDetails_local({
+                ...details_local, [e.target.name]: e.target.files[0]
             });
 
             setLogo(e);
         }
 
-        else setHospDetails({
-            ...hosp_details, [e.target.name]: e.target.value
+        else setDetails_local({
+            ...details_local, [e.target.name]: e.target.value
         });
     };
 
-    const handleContactDetails = (e) => setContactdetails({
-        ...contact_details, [e.target.name]: e.target.value
-    });
-
+    // Update logo in the local logo div
     const setLogo = (e) => {
         file = e.target.files[0];
 
-        if (file){
+        if (file) {
             // Converting image into url:
             const fileUrl = URL.createObjectURL(file);
             document.getElementById("hosp_logo").src = fileUrl;
         }
     }
 
+    // ----------------------------------
+    // Send the updated values to server
+    // ----------------------------------
+    const { setHospDetails } = useContext(AuthContext);
+
     const saveChanges = (e) => {
         const start = Date.now();
         const id = e.target.id;
         const form_data = new FormData();
 
-        if (id === "hosp_info"){
-            setHospSaveStatus(true);
+        setSaveStatus(true);
 
-            for (let each_key in hosp_details) {
-                let value = hosp_details[each_key];
+        for (let each_key in details_local) {
+            let value = details_local[each_key];
 
-                if (value) form_data.append(each_key, value);
-            }
+            if (value) form_data.append(each_key, value);
         }
 
-        else if (id === "contact_info"){
-            setContSaveStatus(true);
-
-            for (let each_key in contact_details) {
-                let value = contact_details[each_key];
-
-                if (value) form_data.append(each_key, value);
-            }
-        }
-
-        axios.post("http://192.168.137.1:9999/base/update_hosp_settings",
+        axios.post(serverurl + "/update_hosp_settings",
             form_data,
-            {timeout: 5000}
+            { timeout: 5000 }
         )
-        .then(res => {
-            const data = res.data;
-            const end = Date.now();
+            .then(res => {
+                const data = res.data;
+                const end = Date.now();
 
-            console.log(
-                "Server response on '" + data.request + "':" +
-                "\nMethod: " + data.method +
-                "\nStatus: " + res.status +
-                "\nTime taken: " + (end - start) + "ms"
-            );
+                console.log(
+                    "Server response on '" + data.request + "':" +
+                    "\nMethod: " + data.method +
+                    "\nStatus: " + res.status +
+                    "\nTime taken: " + (end - start) + "ms"
+                );
 
-            setHospSaveStatus(false);
-            setContSaveStatus(false);
-        })
-        .catch(err => {
-            console.log("Error: " + err);
+                // Update new values all over
+                setHospDetails({
+                    img_name: data.logoname,
+                    img_url: data.logourl,
+                    hosp_name: data.hosp_name,
+                    address: data.address,
+                    description: data.description,
+                    phone_no: data.phone_no,
+                    email: data.email
+                })
 
-            setHospSaveStatus(false);
-            setContSaveStatus(false);
-        });
+                setSaveStatus(false);
+            })
+            .catch(err => {
+                console.log("Error: " + err);
+
+                setSaveStatus(false);
+            });
     }
 
     return (
@@ -119,7 +124,11 @@ export default function General(props) {
 
                 <div className={styles.logoContainer}>
                     <div className={styles.logoDiv}>
-                        <img id="hosp_logo" src="#" alt="" />
+                        <img
+                            id="hosp_logo"
+                            src="https://www.shutterstock.com/image-vector/blank-image-photo-placeholder-icon-600nw-2501054919.jpg"
+                            alt=""
+                        />
                     </div>
 
                     <input
@@ -127,7 +136,7 @@ export default function General(props) {
                         type="file"
                         id='logo'
                         style={{ display: 'none' }}
-                        onChange={handleHospitalDetails}
+                        onChange={handleDetails}
                     />
 
                     <button className={styles.whenWide}
@@ -146,7 +155,7 @@ export default function General(props) {
                         name='hosp_name'
                         type="text"
                         placeholder='Hospital name'
-                        onChange={handleHospitalDetails}
+                        onChange={handleDetails}
                     />
                 </div>
 
@@ -157,7 +166,7 @@ export default function General(props) {
                         name='address'
                         type="text"
                         placeholder='Address'
-                        onChange={handleHospitalDetails}
+                        onChange={handleDetails}
                     />
                 </div>
 
@@ -169,21 +178,10 @@ export default function General(props) {
                         id="decription"
                         placeholder='Add description'
                         rows={6}
-                        onChange={handleHospitalDetails}
+                        onChange={handleDetails}
                     ></textarea>
                 </div>
 
-                <div className={styles.wrapper}>
-                    <div className={styles.savBtn}>
-                        <button id='hosp_info'
-                            onClick={saveChanges}
-                            disabled={hosp_save_status}
-                        >{hosp_save_status ? "Saving.." : "Save Changes"}</button>
-                    </div>
-                </div>
-            </div>
-
-            <div className={styles.contactInfo}>
                 <h3>Contact Details</h3>
 
                 <div className={styles.phno}>
@@ -193,7 +191,7 @@ export default function General(props) {
                         name='phone'
                         type="number"
                         placeholder='Phone number'
-                        onChange={handleContactDetails}
+                        onChange={handleDetails}
                     />
                 </div>
 
@@ -204,7 +202,7 @@ export default function General(props) {
                         name='email'
                         type="email"
                         placeholder='Email address'
-                        onChange={handleContactDetails}
+                        onChange={handleDetails}
                     />
                 </div>
 
@@ -212,8 +210,8 @@ export default function General(props) {
                     <div className={styles.savBtn}>
                         <button id='contact_info'
                             onClick={saveChanges}
-                            disabled={cont_save_status}
-                        >{cont_save_status? "Saving.." : "Save Changes"}</button>
+                            disabled={save_status}
+                        >{save_status ? "Saving.." : "Save Changes"}</button>
                     </div>
                 </div>
             </div>
