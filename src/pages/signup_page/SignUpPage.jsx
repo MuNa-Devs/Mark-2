@@ -2,6 +2,7 @@
 // import Logo from '../reusable_elements/Logo'
 import WarningDiv from '../../reusable_components/WarningDiv';
 import styles from './signup_page.module.css';
+import { serverurl } from '../../../handlings/LocalConstants';
 
 // For global values from context provider
 import { useContext } from 'react';
@@ -67,7 +68,7 @@ export default function SignUpPage() {
         // Disable signup button to stop multiple triggers
         setSignupTriggerStatus(true);
 
-        axios.post("http://192.168.137.1:9999/base/register", 
+        axios.post(serverurl + "/register", 
             input,
             {timeout: 3000}
         )

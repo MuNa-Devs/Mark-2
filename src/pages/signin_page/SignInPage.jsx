@@ -3,6 +3,7 @@
 // import Logo from '../reusable_elements/Logo'
 import styles from './signin_page.module.css';
 import WarningDiv from '../../reusable_components/WarningDiv';
+import { serverurl } from '../../../handlings/LocalConstants';
 
 // For global values from context provider
 import { useContext } from 'react';
@@ -48,7 +49,7 @@ function SignInPage(){
         if (Object.values(temp_input_err_status).includes(true)) return;
 
         setLoginStatus(true);
-        axios.post("http://192.168.137.1:9999/base/login",
+        axios.post(serverurl + "/login",
             input,
             {timeout: 3000}
         )
@@ -66,7 +67,6 @@ function SignInPage(){
             if (data.condition){
                 setLogin();
                 navigate("/dashboard");
-                sessionStorage.setItem("is_logged_in", "true");
             }
 
             else{
