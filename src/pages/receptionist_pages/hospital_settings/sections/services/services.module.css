@@ -23,7 +23,8 @@
 .bodyContainer{
     height:85%;
     width:100%;
-    background-color: #1b2551;
+    /* background-color: #1b2551; */
+    background-color: #1c2127;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
@@ -226,6 +227,10 @@
     box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     cursor: pointer;
 }
-
+.toggl:hover{
+    transform: scale(1.18);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
 
 
