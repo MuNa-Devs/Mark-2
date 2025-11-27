@@ -16,11 +16,11 @@
     height: 65dvh;
     max-height: 550px;
 
-    background-color: #101922;
+    background-color: var(--bg-lighter);
     border-radius: 12px;
     padding: 16px;
 
-    box-shadow: 0 0 40px rgba(0,0,0,0.8);
+    box-shadow: 0 0 40px var(--shadow);
     z-index: 999;
 
     display: flex;
@@ -38,7 +38,7 @@
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
-    border-bottom: 1px solid #3b4754;
+    border-bottom: 1px solid var(--border);
 }
 
 .titlebar h3{
@@ -53,7 +53,7 @@
     font-size: 0.9em;
     cursor: pointer;
 } .titlebar button:hover{
-    color: rgb(255, 25, 0);
+    color: #ff5f5f;
 }
 
 .titlebar .topButtons .cancel,
@@ -75,7 +75,7 @@
     align-items: center;
     justify-content: flex-start;
     gap: 40px;
-    border-bottom: 1px solid #3b4754;
+    border-bottom: 1px solid var(--border);
 }
 
 .sections .sectionHeaders .section{
@@ -83,12 +83,12 @@
     height: 30px;
     background-color: transparent;
     border: none;
-    color: #e2e8f0;
+    color: var(--text-primary);
     font-size: 0.85em;
     letter-spacing: 0.5px;
     cursor: pointer;
 } .sections .sectionHeaders .activeSection{
-    border-bottom: 3px solid #137fec;
+    border-bottom: 3px solid var(--primary);
     position: relative;
     top: 1.5px;
 }
@@ -108,7 +108,7 @@
     overflow-x: hidden;
     overflow-y: auto;
     scroll-behavior: smooth;
-    border-bottom: 1px solid #3b4754;
+    border-bottom: 1px solid var(--border);
 } .sections .sectionBodyContainer::-webkit-scrollbar {
     width: 4px;
 } .sections .sectionBodyContainer::-webkit-scrollbar-thumb {
@@ -130,7 +130,7 @@
     height: 80px;
     width: 80px;
     border-radius: 50%;
-    background-color: #2a2f36;
+    background-color: var(--card-bg);
 }
 
 .sections .sectionBodyContainer .profilePic .uploadBtn{
@@ -149,8 +149,8 @@
     padding: 8px;
     padding-left: 16px;
     padding-right: 16px;
-    background-color: #137fec;
-    color: #e2e8f0;
+    background-color: var(--primary);
+    color: var(--text-primary);
     border: none;
     border-radius: 8px;
     font-size: 0.8em;
@@ -160,7 +160,7 @@
 
 .sections .profilePic .uploadBtn p{
     font-size: 0.7em;
-    color: #9dabb9;
+    color: var(--text-secondary);
 }
 
 .sections .details{
@@ -177,7 +177,7 @@
     padding: 0;
     font-size: 0.73em;
     letter-spacing: 0.5px;
-    color: #adb2b6;
+    color: var(--text-secondary);
     margin-bottom: 4px;
 }
 
@@ -185,11 +185,11 @@
     width: calc(100% - 24px);
     padding: 8px;
     padding-left: 12px;
-    background-color: #3b4754b7;
+    background-color: var(--border-light);
     border: none;
     border-radius: 9px;
-    caret-color: #e2e8f0;
-    color: #e2e8f0;
+    caret-color: var(--text-primary);
+    color: var(--text-primary);
     font-size: 0.75em;
     letter-spacing: 0.5px;
     outline: none;
@@ -217,16 +217,16 @@
 }
 
 .bottomButtons .cancel{
-    color: #adb2b6;
+    color: var(--text-secondary);
     background-color: transparent;
 } .bottomButtons .cancel:hover{
-    background-color: rgb(255, 54, 32);
-    color: #e2e8f0;
+    background-color: #ff5f5f;
+    color: var(--text-primary);
 }
 
 .bottomButtons .save{
-    color: #e2e8f0;
-    background-color: #137fec;
+    color: var(--text-primary);
+    background-color: var(--primary);
 }
 
 /* Media Queries */
@@ -238,7 +238,7 @@
         gap: 20px;
         column-gap: 40px;
         width: 100%;
-        border-bottom: 1px solid #3b4754;
+        border-bottom: 1px solid var(--border);
         padding-bottom: 20px;
     }
 }
@@ -261,14 +261,14 @@
 
         display: inline;
     } .titlebar .topButtons .cancel{
-        color: #adb2b6;
+        color: var(--text-secondary);
         background-color: transparent;
     } .titlebar .topButtons .cancel:hover{
-        background-color: rgb(255, 54, 32);
-        color: #e2e8f0;
+        background-color: #ff5f5f;
+        color: var(--text-primary);
     } .titlebar .topButtons .save{
-        color: #e2e8f0;
-        background-color: #137fec;
+        color: var(--text-primary);
+        background-color: var(--primary);
     }
 
      .titlebar .topButtons{
@@ -308,7 +308,7 @@
         height: 65dvh;
         max-height: 550px;
 
-        background-color: #101922;
+        background-color: var(--bg-lighter);
         border-radius: 12px;
         padding: 16px;
 

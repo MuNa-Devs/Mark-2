@@ -86,7 +86,10 @@ export default function ReceptionistSidebar(props){
                         onClick={() => setIsOpen(true)}
                     ><i className="fa-solid fa-list"></i></button>
 
-                    <button className={styles.settings}><i className="fa-solid fa-gear"></i> <span>Settings</span></button>
+                    <button className={styles.settings}
+                        onClick={() => navigate("/settings", { state: { from: props.location } })}
+                    ><i className="fa-solid fa-gear"></i> <span>Settings</span></button>
+
                     <button className={styles.logout}
                         onClick={() => setLogOut()}
                     ><i className="fa-solid fa-arrow-right-from-bracket"></i> <span>Log Out</span></button>

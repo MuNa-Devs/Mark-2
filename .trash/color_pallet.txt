@@ -1,5 +1,5 @@
 const flatColors = {
-  body: "#101922",
+  body: "rgba(18, 20, 23, 1)",
   sidebar: "#1c2127",
   header: "#1c2127ff",
   card: "#1c2127",

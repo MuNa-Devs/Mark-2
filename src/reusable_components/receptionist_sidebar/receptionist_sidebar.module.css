@@ -6,8 +6,8 @@
     justify-content: space-between;
     padding: 0;
     margin: 0;
-    background-color: #1c1f25;
-    border-right: 1px solid #2a2f36;
+    background-color: var(--bg-light);
+    border-right: 1px solid var(--card-bg);
 }
 
 .sidebar .blurDiv{
@@ -39,7 +39,7 @@
     height: 50px;
     width: 50px;
     border-radius: 50%;
-    background-color: #2a2f36;
+    background-color: var(--card-bg);
 }
 
 .hospitalBranding .logo img{
@@ -51,12 +51,12 @@
 .hospitalBranding .hospitalName h4{
     font-size: 0.8em;
     letter-spacing: 0.8px;
-    color: #e8ecf2;
+    color: var(--text-primary);
 }
 
 .hospitalBranding .hospitalName p{
     font-size: 0.7em;
-    color: #9aa5b5;
+    color: var(--text-secondary);
 }
 
 .sidebar .utilities{
@@ -71,7 +71,7 @@
 
 .sidebar .utilities .utilOptions,
 .sidebar .sidebarOptions .utilOptions{
-    color: #e8ecf2;
+    color: var(--text-primary);
     display: none;
 }
 
@@ -87,7 +87,7 @@
     background-color: transparent;
     border-radius: 8px;
     border: none;
-    color: #e8ecf2;
+    color: var(--text-primary);
     text-align: left;
     font-size: 0.75em;
     letter-spacing: 0.75px;
@@ -97,14 +97,14 @@
 }
 
 .sidebar .utilities .activePage{
-    background-color: #26303b;
-    outline: 1px solid #4da3ff;
-    color: #4da3ff;
+    background-color: var(--bg-lighter);
+    outline: 1px solid var(--accent);
+    color: var(--accent);
 }
 
 .sidebar .utilities .activePage i,
 .sidebar .utilities .activePage span{
-    color: #4da3ff;
+    color: var(--accent);
 }
 
 .sidebar .sidebarOptions{
@@ -133,7 +133,7 @@
 }
 
 .settings{
-    color: #e8ecf2;
+    color: var(--text-primary);
 }
 
 .sidebar .sidebarOptions .logout i, .sidebar .sidebarOptions .logout span{
@@ -201,7 +201,7 @@
         padding: 0;
         margin: 0;
         border-radius: 50%;
-        background-color: #2a2f36;
+        background-color: var(--card-bg);
     }
 
     .sidebar{
@@ -220,9 +220,9 @@
         justify-content: space-between;
         padding: 0;
         margin: 0;
-        background-color: #1c1f25;
+        background-color: var(--bg-light);
         border: none;
-        border-bottom: 1px solid #2a2f36;
+        border-bottom: 1px solid var(--card-bg);
     }
 
     .ensureTogether{
@@ -265,7 +265,7 @@
         background-color: transparent;
         border: none;
     } .sidebar .sidebarOptions .utilOptions{
-        color: #e8ecf2;
+        color: var(--text-primary);
         display: block;
     }
 
@@ -279,7 +279,7 @@
     width: 15rem !important;
     height: 100dvh !important;
     flex-direction: column !important;
-    border-right: 1px solid #2a2f36 !important;
+    border-right: 1px solid var(--card-bg) !important;
     position: fixed !important;
     top: 0 !important;
     left: 0 !important;
@@ -322,7 +322,7 @@
     height: 50px !important;
     width: 50px !important;
     border-radius: 50% !important;
-    background-color: #2a2f36 !important;
+    background-color: var(--card-bg) !important;
 }
 
 .sidebar.open .utilities{
@@ -341,7 +341,7 @@
 
 .sidebar.open .utilities .utilOptions, 
 .sidebar.open .sidebarOptions .utilOptions{
-    color: #e8ecf2 !important;
+    color: var(--text-primary) !important;
     display: none !important;
 }
 
@@ -351,7 +351,7 @@
     background-color: transparent !important;
     border-radius: 8px !important;
     border: none !important;
-    color: #e8ecf2 !important;
+    color: var(--text-primary) !important;
     text-align: left !important;
     font-size: 0.75em !important;
     letter-spacing: 0.75px !important;
@@ -361,7 +361,7 @@
 }
 
 .sidebar.open .utilities .activePage{
-    background-color: #26303b !important;
+    background-color: var(--bg-lighter) !important;
     outline: 1px solid #4da3ff !important;
     color: #4da3ff !important;
 }
@@ -400,7 +400,7 @@
 }
 
 .settings{
-    color: #e8ecf2 !important;
+    color: var(--text-primary) !important;
 }
 
 .sidebar.open .sidebarOptions .logout i, .sidebar.open .sidebarOptions .logout span{

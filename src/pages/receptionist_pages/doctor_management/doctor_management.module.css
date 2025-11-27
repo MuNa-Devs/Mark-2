@@ -9,8 +9,8 @@ h4, h3, p {
     justify-content: space-between;
     height: 100dvh;
     width: 100dvw;
-    background-color: #121417;
-    color: #e8ecf2;
+    background-color: var(--bg);
+    color: var(--text-primary);
 }
 
 .mainDiv{
@@ -29,8 +29,8 @@ h4, h3, p {
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid #2a2f36;
-    background-color: #1c1f25;
+    border-bottom: 1px solid var(--border-light);
+    background-color: var(--bg-light);
 }
 
 .mainDiv .header .titlebar{
@@ -48,13 +48,13 @@ h4, h3, p {
 }
 
 .mainDiv .header .titlebar .mngmntIcon{
-    color: #4da3ff;
+    color: var(--accent);
 }
 
 .searchBarDiv{
     width: auto;
     height: auto;
-    background-color: #2a2f36;
+    background-color: var(--card-bg);
     border-radius: 8px;
     display: flex;
     align-items: center;
@@ -73,8 +73,8 @@ h4, h3, p {
     outline: none;
     padding: 5px;
     background-color: transparent;
-    caret-color: #e8ecf2;
-    color: #e8ecf2;
+    caret-color: var(--text-primary);
+    color: var(--text-primary);
     letter-spacing: 1px;
 }
 
@@ -90,8 +90,8 @@ h4, h3, p {
     height: 33px;
     width: 33px;
     font-size: 0.75em;
-    color: #9aa5b5;
-    background-color: #2a2f36;
+    color: var(--text-secondary);
+    background-color: var(--card-bg);
     border: none;
     border-radius: 8px;
     padding: 0;
@@ -99,12 +99,9 @@ h4, h3, p {
     cursor: pointer;
 }
 
-.mainDiv .header .options .notificationIcon i:hover{
-    color: #4da3ff;
-}
-
-.mainDiv .header .options .aboutIcon i:hover{
-    color: #4da3ff;
+.mainDiv .header .options .notificationIcon:hover,
+.mainDiv .header .options .aboutIcon:hover{
+    color: var(--accent);
 }
 
 .mainDiv .managementBody{
@@ -129,14 +126,15 @@ h4, h3, p {
 
 .mainDiv .managementBody .topMost button{
     padding: 8px;
-    background-color: #137fec;
-    color: #ffffff;
+    background-color: var(--primary);
+    color: var(--button-text);
     border-radius: 8px;
     border: none;
     font-size: 0.75em;
     letter-spacing: 0.75px;
     font-weight: 200;
     cursor: pointer;
+    box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5);
 }
 
 .mainDiv .managementBody .topMost .fallbackAddDocBtn{
@@ -147,7 +145,7 @@ h4, h3, p {
     display: flex;
     flex-direction: column;
     flex: 1;
-    border: 1px solid #3b4754;
+    border: 1px solid var(--border-light);
     border-bottom: none;
     border-radius: 16px;
     padding-top: 10px;
@@ -163,8 +161,8 @@ h4, h3, p {
     position: relative;
     left: 20px;
     height: auto;
-    border-bottom: 1px solid #3b4754;
-    color: #9aa5b5;
+    border-bottom: 1px solid var(--border-light);
+    color: var(--text-secondary);
 }
 
 .mainDiv .managementBody .existingDocs .headers .docName{
@@ -193,9 +191,9 @@ h4, h3, p {
     padding-bottom: 10px;
     position: relative;
     left: 20px;
-    border: 1px solid #3b47548e;
+    border: 1px solid var(--border-light);
     border-radius: 8px;
-    background-color: #1e2228;
+    background-color: var(--bg-lighter);
 }
 
 .mainDiv .managementBody .docDiv .docPfp{
@@ -203,7 +201,7 @@ h4, h3, p {
     width: 50px;
     position: relative;
     left: 20px;
-    background-color: #2a2f36;
+    background-color: var(--card-bg);
     border-radius: 50%;
 }
 
@@ -217,10 +215,10 @@ h4, h3, p {
     flex: 1;
     word-wrap: break-word;
     padding-left: calc(8rem - 60px);
-    font-size: 0.8em;
-    letter-spacing: 0.6px;
+    font-size: 0.75em;
+    letter-spacing: 0.65px;
     font-weight: 250;
-    color: #e8ecf2;
+    color: var(--text-primary);
 }
 
 .mainDiv .managementBody .docDiv .actionBtns{
@@ -234,13 +232,13 @@ h4, h3, p {
 .mainDiv .managementBody .docDiv .actionBtns button{
     background-color: transparent;
     border: none;
-    color: #4da3ff;
+    color: var(--accent);
     font-size: 1.1em;
     cursor: pointer;
 }
 
 .mainDiv .managementBody .docDiv .actionBtns button i{
-    color: #4da3ff;
+    color: var(--accent);
     font-size: 0.9em;
 }
 
@@ -281,8 +279,8 @@ h4, h3, p {
         justify-content: space-between;
         height: 100dvh;
         width: 100dvw;
-        background-color: #121417;
-        color: #e8ecf2;
+        background-color: var(--bg);
+        color: var(--text-primary);
     }
 }
 
@@ -290,7 +288,7 @@ h4, h3, p {
     .searchBarDiv{
         width: auto;
         height: auto;
-        background-color: #2a2f36;
+        background-color: var(--card-bg);
         border-radius: 8px;
         display: flex;
         align-items: center;
@@ -309,8 +307,8 @@ h4, h3, p {
         outline: none;
         padding: 5px;
         background-color: transparent;
-        caret-color: #e8ecf2;
-        color: #e8ecf2;
+        caret-color: var(--text-primary);
+        color: var(--text-primary);
         letter-spacing: 1px;
     }
 }
@@ -336,8 +334,8 @@ h4, h3, p {
         outline: none;
         padding: 5px;
         background-color: transparent;
-        caret-color: #e8ecf2;
-        color: #e8ecf2;
+        caret-color: var(--text-primary);
+        color: var(--text-primary);
         letter-spacing: 1px;
     }
 
@@ -351,8 +349,8 @@ h4, h3, p {
         position: relative;
         left: 10px;
         height: auto;
-        border-bottom: 1px solid #3b4754;
-        color: #9aa5b5;
+        border-bottom: 1px solid var(--border-light);
+        color: var(--text-secondary);
     }
 
     .mainDiv .managementBody .existingDocs .headers .docName{
@@ -380,9 +378,9 @@ h4, h3, p {
         padding-bottom: 10px;
         position: relative;
         left: 10px;
-        border: 1px solid #3b47548e;
+        border: 1px solid var(--border-light);
         border-radius: 8px;
-        background-color: #1e2228;
+        background-color: var(--bg-lighter);
     }
 
     .mainDiv .managementBody .docDiv .docPfp{

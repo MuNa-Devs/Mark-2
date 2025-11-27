@@ -3,7 +3,7 @@
     padding: 0;
     height: 100dvh;
     width: 100dvw;
-    background-color: #121417;
+    background-color: var(--bg);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -19,7 +19,7 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #e8ecf2;
+    color: var(--text-primary);
 }
 
 .signupBody h1 {
@@ -27,24 +27,24 @@
     font-weight: bold;
     margin: 0;
     width: auto;
-    color: #e8ecf2;
+    color: var(--text-primary);
 }
 
 .signupBody h2 {
     font-size: 1.5em;
     margin: 0;
     width: auto;
-    color: #9aa5b5;
+    color: var(--text-secondary);
 }
 
 .signupBody p {
     font-size: 0.8em;
     margin: 0;
-    color: #9aa5b5;
+    color: var(--text-secondary);
 }
 
 .signupCard {
-    background-color: #1e2228;
+    background-color: var(--bg-light);
     padding: 28px;
     margin: 20px;
     height: auto;
@@ -70,7 +70,7 @@
 }
 
 .signupCard h5 {
-    color: #e8ecf2;
+    color: var(--text-primary);
 }
 
 .signupCard .text {
@@ -83,14 +83,14 @@
     max-height: 40px;
     min-width: 250px;
     max-width: 500px;
-    border: 0.5px solid #2a2f36;
-    background-color: #2a2f36;
-    color: #e8ecf2;
+    border: 0.5px solid var(--card-bg);
+    background-color: var(--card-bg);
+    color: var(--text-primary);
 }
 
 .signupCard .text:focus {
-    outline: 0.5px solid #4da3ff;
-    background-color: #2a2f36;
+    outline: 0.5px solid var(--accent);
+    background-color: var(--card-bg);
 }
 
 .utils {
@@ -108,21 +108,21 @@
     width: 100%;
     display: inline-flex;
     gap: 5px;
-    color: #9aa5b5;
+    color: var(--text-secondary);
 }
 
 .rememberMeDude input {
-    border: 0.5px solid #2a2f36;
-    background-color: #2a2f36;
+    border: 0.5px solid var(--card-bg);
+    background-color: var(--card-bg);
 }
 
 a {
     text-decoration: none;
-    color: #4da3ff;
+    color: var(--accent);
 }
 
 .utils a p {
-    color: #4da3ff;
+    color: var(--accent);
 }
 
 .signupBtn {
@@ -131,20 +131,23 @@ a {
     max-height: 40px;
     min-width: 250px;
     max-width: 500px;
-    background-color: #4da3ff;
-    color: white;
+    background-color: var(--accent);
+    color: var(--button-text);
     border-radius: 5px;
     border: none;
     cursor: pointer;
+} .signupBtn:hover{
+    opacity: 0.8;
 }
 
 .signupBtn:active {
-    background-color: #4da3ff;
+    background-color: var(--accent);
     opacity: 0.8;
 }
 
 .signupBtn:disabled {
-    background-color: rgba(77, 163, 255, 0.6);
+    background-color: var(--accent);
+    opacity: 0.8;
     cursor: not-allowed;
 }
 

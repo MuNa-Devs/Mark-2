@@ -3,11 +3,10 @@ import General from './sections/general/General';
 import OPTimings from './sections/op_timings/OPTimings';
 import Holidays from './sections/holidays/Holidays';
 import Services from "./sections/services/Services";
-
-import { useContext } from 'react';
 import { AuthContext } from '../../../AuthContext';
 
-import { useState } from 'react';
+import { useContext, useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 
 export function Manager(props) {
 
@@ -33,6 +32,7 @@ export function Manager(props) {
 }
 
 export function SettingSidebar(props){
+    const navigate = useNavigate();
 
     // ---------------------
     // Handle Logout button
@@ -102,7 +102,9 @@ export function SettingSidebar(props){
                         onClick={() => setIsOpen(true)}
                     ><i className="fa-solid fa-list"></i></button>
 
-                    <button className={styles.settings}><i className="fa-solid fa-gear"></i> <span>Settings</span></button>
+                    <button className={styles.settings}
+                        onClick={() => navigate("/settings")}
+                    ><i className="fa-solid fa-gear"></i> <span>Settings</span></button>
 
                     <button className={styles.logout}
                         onClick={() => setLogOut()}

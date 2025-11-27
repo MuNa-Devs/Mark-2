@@ -6,7 +6,8 @@ import HospitalSettings from "./pages/receptionist_pages/hospital_settings/Hospi
 import Dorakaledu from "./pages/page_not_found/404";
 import AprilFool from "./pages/page_not_found/AprilFool";
 import HomePage from "./pages/home_page/HomePage";
-import { AuthContext, LoginProtector } from "./AuthContext";
+import Settings from "./pages/receptionist_pages/settings_page/Settings";
+import { LoginProtector } from "./AuthContext";
 
 import { Routes, Route } from "react-router-dom";
 import AppointmentManagment from "./pages/receptionist_pages/appointment_management/AppointmentManagement";
@@ -42,6 +43,12 @@ export default function App() {
             <Route path="/hospitalsettings" element={
                 <LoginProtector>
                     <HospitalSettings />
+                </LoginProtector>
+            } />
+
+            <Route path="/settings" element={
+                <LoginProtector>
+                    <Settings />
                 </LoginProtector>
             } />
 

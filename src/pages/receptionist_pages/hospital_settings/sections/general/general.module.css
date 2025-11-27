@@ -8,7 +8,7 @@
 
 .generalScreen h1{
     font-size: 1.2em;
-    color: #e2e8f0;
+    color: var(--text-primary);
     letter-spacing: 0.7px;
 }
 
@@ -40,14 +40,14 @@
     justify-content: center;
     gap: 16px;
     padding: 16px;
-    background-color: #1c1f25;
-    border: 1px solid #3b4754;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border);
     border-radius: 16px;
 }
 
 .hospitalInfo h3, .contactInfo h3{
     font-size: 0.95em;
-    color: #e2e8f0;
+    color: var(--text-primary);
     letter-spacing: 0.6px;
     margin: 12px;
 }
@@ -80,7 +80,7 @@
     height: 70px;
     width: 70px;
     border-radius: 50%;
-    background-color: #2a2f36;
+    background-color: var(--card-bg);
 }
 
 .hospitalInfo .logoDiv img{
@@ -94,13 +94,13 @@
 .hospitalInfo .logoContainer button{
     width: auto;
     height: auto;
-    background-color: #137fec;
+    background-color: var(--primary);
     border: none;
     border-radius: 8px;
     padding: 8px;
     padding-left: 16px;
     padding-right: 16px;
-    color: #e2e8f0;
+    color: var(--button-text);
     cursor: pointer;
 }
 
@@ -111,7 +111,7 @@
 .hospitalInfo h5, .contactInfo h5{
     font-size: 0.8em;
     letter-spacing: 0.5px;
-    color: #9dabb9;
+    color: var(--text-secondary);
     margin: 0;
 }
 
@@ -121,16 +121,16 @@
     border: none;
     outline: none;
     padding: 12px;
-    background-color: #283039;
-    caret-color: #e2e8f0;
-    color: #e2e8f0;
+    background-color: var(--card-bg);
+    caret-color: var(--text-primary);
+    color: var(--text-primary);
     font-family: Arial, Helvetica, sans-serif;
 }
 
 .hospitalInfo label{
     font-size: 0.8em;
     letter-spacing: 0.5px;
-    color: #9dabb9;
+    color: var(--text-secondary);
     margin: 0;
 }
 
@@ -153,23 +153,24 @@
 .savBtn button{
     width: auto;
     height: auto;
-    background-color: #137fec;
+    background-color: var(--primary);
     border: none;
     border-radius: 8px;
     padding: 8px;
     padding-left: 16px;
     padding-right: 16px;
-    color: #e2e8f0;
+    color: var(--button-text);
     cursor: pointer;
 }
 
 .savBtn button:disabled {
-    background-color: rgba(77, 163, 255, 0.6);
+    background-color: var(--accent);
+    opacity: 0.8;
     cursor: not-allowed;
 }
 
 .savBtn button:active {
-    background-color: #4da3ff;
+    background-color: var(--accent);
     opacity: 0.8;
 }
 

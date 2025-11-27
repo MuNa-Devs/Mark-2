@@ -8,7 +8,7 @@
 
 .generalScreen h1{
     font-size: 1.2em;
-    color: #e2e8f0;
+    color: var(--text-primary);
     letter-spacing: 0.7px;
 }
 
@@ -34,7 +34,7 @@
 .generalScreen h5{
     font-size: 0.8em;
     letter-spacing: 0.5px;
-    color: #9dabb9;
+    color: var(--text-secondary);
     margin: 0;
     margin-top: 12px;
     margin-bottom: 12px;
@@ -50,14 +50,14 @@
     justify-content: center;
     gap: 16px;
     padding: 16px;
-    background-color: #1c1f25;
-    border: 1px solid #3b4754;
+    background-color: var(--bg-light);
+    border: 1px solid var(--border);
     border-radius: 16px;
 }
 
 .opdepTimings h3, .opHolidayCalendar h3, .specialServices h3{
     font-size: 0.95em;
-    color: #e2e8f0;
+    color: var(--text-primary);
     letter-spacing: 0.6px;
     margin: 8px;
     margin-left: 12px;
@@ -80,8 +80,8 @@
     padding-right: 12px;
     border: none;
     border-radius: 8px;
-    background-color: #137fec;
-    color: #e2e8f0;
+    background-color: var(--accent);
+    color: var(--button-text);
     cursor: pointer;
 }
 
@@ -103,8 +103,8 @@
     padding-right: 12px;
     border: none;
     border-radius: 8px;
-    background-color: #137fec;
-    color: #e2e8f0;
+    background-color: var(--accent);
+    color: var(--button-text);
     cursor: pointer;
 }
 

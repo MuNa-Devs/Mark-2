@@ -5,9 +5,8 @@ import { useLocation } from 'react-router-dom';
 import { useState } from 'react';
 
 export default function HospitalSettings(){
-
     const location = useLocation();
-    const native = location.state?.from || "/";
+    const native = location.state?.from || "/dashboard";
 
     const [section_body, setSectionBody] = useState("general");
 
